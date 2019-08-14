@@ -42,17 +42,21 @@
 
         <title>general</title>
     </head>
-    <script>
-      document.write("hello mc");
-    </script>
+  
 
     <body>
         </br>
 
         <script>
-          var a = 123;
-          var b = 321;
-            document.write(a+b);
+          var customerName = prompt("Please enter your name", "<name goes here>");
+
+if (customerName!= null) {
+
+    document.getElementById("welcome").innerHTML =
+
+    "Hello " + customerName + "! How are you today?";
+
+}
         </script>
         <div class="selection" >
             <a href="">Photography</a>
