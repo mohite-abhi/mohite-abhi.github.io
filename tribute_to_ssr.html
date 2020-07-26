@@ -53,7 +53,7 @@
 
         //to get the xml file from the same directory, it was made synchronous because we are not dealing with server
         var httpFileTransferTool = new XMLHttpRequest;
-        httpFileTransferTool.open("GET", "./info1.xml", false);
+        httpFileTransferTool.open("GET", "helpline.xml", false);
         httpFileTransferTool.send();
 
         var str1 = httpFileTransferTool.responseXML;
