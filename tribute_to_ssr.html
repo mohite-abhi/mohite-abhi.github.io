@@ -4,73 +4,99 @@
     know more here https://stackoverflow.com/questions/11527238/load-xml-file-in-a-directory-using-javascript  -->
 
 
-<!-- documented code to be uploaded at slider.html at https://github.com/astroncoda/astroncoda.github.io  -->
 <html>
+
 
 <head>
     <title>
         goodbye
     </title>
     <script>
+        //setting page to slide-1 to properly handle slides
         window.location.href = "#slide-1";
 
 
-        function clicked(transitionTo) {
-            slideAnimation();
-            var currentSlide = parseInt(window.location.href.slice(-1));
+        //transition acc. to whatever transitionTo function toLeft or to right 
+        function transitionTo(giveNewSlideNo) {
+
+            flashEffect();//lasts 900ms
+
+            var currentSlideNo = parseInt(window.location.href.slice(-1));
+
+            //wait to execute until the flash visual effect is brightest
             setTimeout(
                 function () {
-                    currentSlide = transitionTo(currentSlide);
-                    window.location.href = "#slide-" + currentSlide;
+                    window.location.href = "#slide-" + giveNewSlideNo(currentSlideNo);
                 },
                 450
             )
 
         }
 
-        function toLeft(n) {
-            return (n == 1) ? 6 : (n - 1);
+        //decrease slide no. but on reaching 1 make it 6
+        function prevSlideNo(currentSlideNo) {
+            return (currentSlideNo == 1) ? 6 : (currentSlideNo - 1);
         }
 
-        function toRight(n) {
-            return (n == 6) ? 1 : (n + 1);
+        //increase slide no. but on reaching 6 make it 1
+        function nextSlideNo(currentSlideNo) {
+            return (currentSlideNo == 6) ? 1 : (currentSlideNo + 1);
         }
 
 
 
 
-        function slideAnimation() {
-            document.getElementById("sliderEnvelop").className = "slideAnimation";
-            setTimeout(function () { document.getElementById("sliderEnvelop").className = "resetSlideAnimation"; }, 900);
+        function flashEffect() {
+            document.getElementById("sliderEnvelop").className = "flashEffect";
+            setTimeout(function () { document.getElementById("sliderEnvelop").className = "reloadFlashAnimation"; }, 900);
         }
-        var xhttp = new XMLHttpRequest;
-        xhttp.open("GET", "a.xml", false);
-        xhttp.send();
 
-        var str1 = xhttp.responseXML;
+        //to get the xml file from the same directory, it was made synchronous because we are not dealing with server
+        var httpFileTransferTool = new XMLHttpRequest;
+        httpFileTransferTool.open("GET", "a.xml", false);
+        httpFileTransferTool.send();
+
+        var str1 = httpFileTransferTool.responseXML;
+
         function makeTable() {
-            var len = str1.childNodes[0].childNodes.length;
-            var table = document.createElement("table");
-            table.style = "margin:auto;color:rgb(8, 32, 15);font-family:monospace;font-size:16px";
-            var row, d1, d2;
+            
+            var row, data1, data2,
+            
+            rowsLength = str1.childNodes[0].childNodes.length,   //str1.childNodes[0] is root, whose children are multiple organisation tags 
+            
+            finalTable = document.createElement("table");   //creating table with dom 
+            
+            finalTable.style = "margin:auto;color:rgb(8, 32, 15);font-family:monospace;font-size:16px";
 
-            for (let i = 0; i < len; i++) {
+
+            //placing rows in table acc. to the length of aquired xml object
+            for (var i = 0; i < rowsLength; i++) {
+
+                //create a row
                 row = document.createElement("tr");
-                data1 = document.createElement("td");
-                data1.appendChild(document.createTextNode(str1.childNodes[0].childNodes[i].childNodes[0].innerHTML + ":"));
 
+                //create two data cell
+                data1 = document.createElement("td");
                 data2 = document.createElement("td");
+
+                //add data to cells from xml object
+                data1.appendChild(document.createTextNode(str1.childNodes[0].childNodes[i].childNodes[0].innerHTML + ":"));
                 data2.appendChild(document.createTextNode(str1.childNodes[0].childNodes[i].childNodes[1].innerHTML));
 
+                //insert the cells into the above row 
                 row.appendChild(data1);
                 row.appendChild(data2);
 
-                table.appendChild(row);
+                //add the row to into the final table
+                finalTable.appendChild(row);
             }
 
-            var hahaha = document.getElementById("table");
-            hahaha.appendChild(table);
-            document.getElementById("thisButton").remove();
+            //place the table in the table area already researved in html
+            var tableArea = document.getElementById("tableAreaDiv");
+            tableArea.appendChild(finalTable);
+
+            //remove the button after one click when the table is visible, so that multiple click do not add more data
+            document.getElementById("moreInfoButton").remove();
         }
 
 
@@ -79,6 +105,7 @@
     </script>
 
     <style>
+        /*variables to later use for making sliderEnvelop responsive*/
         :root {
             --arrowSize: 3px;
             --arrowActualSize: 10px;
@@ -98,7 +125,7 @@
             color: rgb(77, 110, 98);
         }
 
-        #thisButton {
+        #moreInfoButton {
             border-radius: 10px;
             border-width: 0px;
             color: rgb(77, 110, 98);
@@ -178,7 +205,7 @@
 
 
 
-    /* style for left and rigiht arrow buttons */
+        /* style for left and rigiht arrow buttons */
 
 
 
@@ -225,13 +252,13 @@
 
 
 
-
-        .slideAnimation {
-            animation-name: slideAnimation;
+        /*animation causes a flash effect when the slides are changed*/
+        .flashEffect {
+            animation-name: flashEffect;
             animation-duration: 900ms;
         }
 
-        @keyframes slideAnimation {
+        @keyframes flashEffect {
             0% {
                 opacity: 100%;
             }
@@ -246,22 +273,22 @@
 
         }
 
-        /*to be able to do slideAnimation again*/
-        .resetSlideAnimation {
+        /*to be able to do flashEffect again*/
+        .reloadFlashAnimation {
             background-color: transparent;
         }
 
 
-    /*making page more responsive*/
-        @media(max-width:1000px){
-            :root{
-                --wid:100%;
-                --arrowActualSize:5px;
-                --hei:30%;
+        /*making page more responsive*/
+        @media(max-width:900px) {
+            :root {
+                --wid: 100%;
+                --arrowActualSize: 2px;
+                --leftMarg: 2%;
+                --hei: 30%;
             }
-            
-        }
 
+        }
     </style>
 
 
@@ -269,39 +296,76 @@
 
 <body>
     <h1><em>thank you for being you</em> </h1>
+
+    <!--whole slide-->
     <div id=sliderEnvelop>
+
+        <!--left arrow-->
         <div id="leftArrowEnvelop">
-            <div class="arrow" id="left" onclick="clicked(toLeft)">))</div>
+            <div class="arrow" id="left" onclick="transitionTo(prevSlideNo)">))</div>
         </div>
+
+        <!--div containing slides 1 to 5-->
         <div class="slider">
-            <div class="slide" id="slide-1"><a href="https://imgur.com/QB6GsUO.png">
+
+            <!--slide 1-->
+            <div class="slide" id="slide-1">
+                <a href="https://imgur.com/QB6GsUO.png">
                     <img src="https://imgur.com/QB6GsUO.png" width="100%" height="100%" />
-                </a></div>
+                </a>
+            </div>
+
+            <!--slide 2-->
             <div class="slide" id="slide-2">
                 <iframe src="https://drive.google.com/file/d/1ZknWf2BKG7oaMPnH26HpF3D5lUHbhx9I/preview" width="100%"
-                    height="100%"></iframe>
+                    height="100%">
+                </iframe>
             </div>
-            <div class="slide" id="slide-3"><a href="https://imgur.com/p3TB7by.png">
+
+            <!--slide 3-->
+            <div class="slide" id="slide-3">
+                <a href="https://imgur.com/p3TB7by.png">
                     <img src="https://imgur.com/p3TB7by.png" width="100%" height="100%" />
-                </a></div>
-            <div class="slide" id="slide-4">
-                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/_JtxJNpDlb4?autoplay=1"
-                    frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen></iframe>
+                </a>
             </div>
-            <div class="slide" id="slide-5"><a href="https://imgur.com/TAsmTYO.png" width="100%" height="100%">
+
+            <!--slide 4-->
+            <div class="slide" id="slide-4">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/_JtxJNpDlb4?autoplay=0"
+                    frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+            <!--slide 5-->
+            <div class="slide" id="slide-5">
+                <a href="https://imgur.com/TAsmTYO.png" width="100%" height="100%">
                     <img src="https://imgur.com/TAsmTYO.png" width="100%" />
-                </a></div>
-            <div class="slide" id="slide-6"><iframe width="100%" height="100%"
-                    src="https://www.youtube.com/embed/FXTgITg-UAM" frameborder="0"
-                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen></iframe></div>
+                </a>
+            </div>
+
+            <!--slide 6-->
+            <div class="slide" id="slide-6">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/FXTgITg-UAM" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                </iframe>
+            </div>
+
+
         </div>
-        <div class="arrow" id="right" onclick="clicked(toRight)">))</div>
+
+        <!--right arrow-->
+        <div class="arrow" id="right" onclick="transitionTo(nextSlideNo)">))</div>
     </div>
-    <div id="table">
-        <h2 onclick="makeTable" onclick="makeTable()">do you know someone who is depressed?<button onclick="makeTable()"
-                type="button" id="thisButton">click here to</button> know more </h2>
+
+
+    <!--finally showing a table on button press with the help of ajax-->
+    <div id="tableAreaDiv">
+        <h2 onclick="makeTable" onclick="makeTable()">do you know someone who is depressed?
+            <button onclick="makeTable()" type="button" id="moreInfoButton">
+                click here to
+            </button> know more
+        </h2>
 
 
     </div>
