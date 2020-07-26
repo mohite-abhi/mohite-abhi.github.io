@@ -1,8 +1,15 @@
+<!-- page hosted at https://astroncoda.github.io/tribute_to_ssr.html -->
+
+<!-- Note: if know more button doesn't work on chrome try changing browser 
+    know more here https://stackoverflow.com/questions/11527238/load-xml-file-in-a-directory-using-javascript  -->
+
+
+<!-- documented code to be uploaded at slider.html at https://github.com/astroncoda/astroncoda.github.io  -->
 <html>
 
 <head>
     <title>
-        childhood
+        goodbye
     </title>
     <script>
         window.location.href = "#slide-1";
@@ -36,35 +43,96 @@
             document.getElementById("sliderEnvelop").className = "slideAnimation";
             setTimeout(function () { document.getElementById("sliderEnvelop").className = "resetSlideAnimation"; }, 900);
         }
+        var xhttp = new XMLHttpRequest;
+        xhttp.open("GET", "./a.xml", false);
+        xhttp.send();
+
+        var str1 = xhttp.responseXML;
+        function makeTable() {
+            var len = str1.childNodes[0].childNodes.length;
+            var table = document.createElement("table");
+            table.style = "margin:auto;color:rgb(8, 32, 15);font-family:monospace;font-size:16px";
+            var row, d1, d2;
+
+            for (let i = 0; i < len; i++) {
+                row = document.createElement("tr");
+                data1 = document.createElement("td");
+                data1.appendChild(document.createTextNode(str1.childNodes[0].childNodes[i].childNodes[0].innerHTML + ":"));
+
+                data2 = document.createElement("td");
+                data2.appendChild(document.createTextNode(str1.childNodes[0].childNodes[i].childNodes[1].innerHTML));
+
+                row.appendChild(data1);
+                row.appendChild(data2);
+
+                table.appendChild(row);
+            }
+
+            var hahaha = document.getElementById("table");
+            hahaha.appendChild(table);
+            document.getElementById("thisButton").remove();
+        }
+
+
+
 
     </script>
 
     <style>
+        :root {
+            --arrowSize: 3px;
+            --arrowActualSize: 10px;
+            --hei: 50%;
+            --wid: 75%;
+            --leftMarg: 8%;
+        }
+
+        h1 {
+            text-align: center;
+            color: rgb(88, 114, 100);
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 18px;
+            color: rgb(77, 110, 98);
+        }
+
+        #thisButton {
+            border-radius: 10px;
+            border-width: 0px;
+            color: rgb(77, 110, 98);
+            ;
+            background-color: rgb(228, 255, 246);
+        }
+
         #sliderEnvelop {
-            height: 50%;
-            background-color: dimgrey;
+            height: var(--hei);
+            width: var(--wid);
+            margin: auto;
+
+            background-color: rgb(232, 243, 234);
+            border-radius: 10px;
+
         }
 
         .slider {
-            width: 60%;
+            width: 80%;
             height: 100%;
             display: inline-flex;
             overflow-x: hidden;
             overflow-y: hidden;
             scroll-snap-type: x mandatory;
+            margin-left: var(--leftMarg);
             float: left;
 
 
         }
 
-        .slides {
-            scroll-behavior: smooth;
-        }
 
         .slide {
             width: 100%;
             flex-shrink: 0;
-            -webkit-overflow-scrolling: touch;
         }
 
         .slider>div {
@@ -74,43 +142,45 @@
         #slide-1 {
             position: relative;
             background-color: blanchedalmond;
+            margin: auto;
         }
 
         #slide-2 {
             position: relative;
-
             background-color: blueviolet;
+            margin: auto;
         }
 
         #slide-3 {
             position: relative;
             background-color: burlywood;
+            margin: auto;
         }
 
         #slide-4 {
             position: relative;
             background-color: crimson;
+            margin: auto;
         }
 
         #slide-5 {
             position: relative;
             background-color: darkmagenta;
+            margin: auto;
         }
 
         #slide-6 {
             position: relative;
             background-color: darkturquoise;
+            margin: auto;
         }
 
 
 
 
-        /* style for left and rigiht arrow buttons */
+    /* style for left and rigiht arrow buttons */
 
 
-        :root {
-            --arrowSize: 3px;
-        }
 
         /* _| shape designed by only taking right and down side border of a div*/
         .arrow {
@@ -119,8 +189,8 @@
             padding: 3px;
             position: relative;
             top: 45%;
-            height: 20px;
-            width: 20px;
+            height: var(--arrowActualSize);
+            width: var(--arrowActualSize);
             background-color: transparent;
             border-radius: 9px 9px 0 9px;
         }
@@ -129,7 +199,7 @@
         #right {
             transform: rotate(-45deg);
             -webkit-transform: rotate(-45deg);
-            float: left;
+            float: right;
 
         }
 
@@ -137,8 +207,6 @@
         #left {
             transform: rotate(135deg);
             -webkit-transform: rotate(135deg);
-            position: relative;
-            bottom: 10px;
         }
 
         #left:hover,
@@ -150,10 +218,9 @@
         now which now floats on the little wider envelop*/
         #leftArrowEnvelop {
             float: left;
-            position: sticky;
-            top: 24%;
-            margin-left: 17%;
-            width: 28px;
+            position: relative;
+            top: 45%;
+            width: 15px;
         }
 
 
@@ -183,30 +250,47 @@
         .resetSlideAnimation {
             background-color: transparent;
         }
+
+
+    /*making page more responsive*/
+        @media(max-width:447px){
+            :root{
+                --wid:100%;
+                --arrowActualSize:2px;
+                --leftMarg:2%;
+                --hei:30%;
+            }
+            
+        }
+
     </style>
 
 
 </head>
 
 <body>
+    <h1><em>thank you for being you</em> </h1>
     <div id=sliderEnvelop>
         <div id="leftArrowEnvelop">
-            <div class="arrow" id="left" onclick="clicked(toLeft)"></div>
+            <div class="arrow" id="left" onclick="clicked(toLeft)">))</div>
         </div>
         <div class="slider">
             <div class="slide" id="slide-1"><a href="https://imgur.com/QB6GsUO.png">
-                    <img src="https://imgur.com/QB6GsUO.png" />
+                    <img src="https://imgur.com/QB6GsUO.png" width="100%" height="100%" />
                 </a></div>
             <div class="slide" id="slide-2">
-                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/vvWegLIYk6A" frameborder="0"
-                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen></iframe>
+                <iframe src="https://drive.google.com/file/d/1ZknWf2BKG7oaMPnH26HpF3D5lUHbhx9I/preview" width="100%"
+                    height="100%"></iframe>
             </div>
             <div class="slide" id="slide-3"><a href="https://imgur.com/p3TB7by.png">
-                    <img src="https://imgur.com/p3TB7by.png" width="100%" />
+                    <img src="https://imgur.com/p3TB7by.png" width="100%" height="100%" />
                 </a></div>
-            <div class="slide" id="slide-4"></div>
-            <div class="slide" id="slide-5"><a href="https://imgur.com/TAsmTYO.png">
+            <div class="slide" id="slide-4">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/_JtxJNpDlb4?autoplay=1"
+                    frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+            <div class="slide" id="slide-5"><a href="https://imgur.com/TAsmTYO.png" width="100%" height="100%">
                     <img src="https://imgur.com/TAsmTYO.png" width="100%" />
                 </a></div>
             <div class="slide" id="slide-6"><iframe width="100%" height="100%"
@@ -214,7 +298,13 @@
                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen></iframe></div>
         </div>
-        <div class="arrow" id="right" onclick="clicked(toRight)"></div>
+        <div class="arrow" id="right" onclick="clicked(toRight)">))</div>
+    </div>
+    <div id="table">
+        <h2 onclick="makeTable" onclick="makeTable()">do you know someone who is depressed?<button onclick="makeTable()"
+                type="button" id="thisButton">click here to</button> know more </h2>
+
+
     </div>
 
 
