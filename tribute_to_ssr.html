@@ -53,7 +53,7 @@
 
         //to get the xml file from the same directory, it was made synchronous because we are not dealing with server
         var httpFileTransferTool = new XMLHttpRequest;
-        httpFileTransferTool.open("GET", "a.xml", false);
+        httpFileTransferTool.open("GET", "./info1.xml", false);
         httpFileTransferTool.send();
 
         var str1 = httpFileTransferTool.responseXML;
@@ -112,6 +112,7 @@
             --hei: 50%;
             --wid: 75%;
             --leftMarg: 8%;
+            --splHei:100%;
         }
 
         h1 {
@@ -151,7 +152,7 @@
             overflow-y: hidden;
             scroll-snap-type: x mandatory;
             margin-left: var(--leftMarg);
-            float: left;
+            float: center;
 
 
         }
@@ -247,7 +248,7 @@
             float: left;
             position: relative;
             top: 45%;
-            width: 15px;
+            width: 0px;
         }
 
 
@@ -257,6 +258,8 @@
             animation-name: flashEffect;
             animation-duration: 900ms;
         }
+
+
 
         @keyframes flashEffect {
             0% {
@@ -279,15 +282,25 @@
         }
 
 
-        /*making page more responsive*/
-        @media(max-width:900px) {
+        /*making page more responsive for smaller divices*/
+        @media(max-width:1000px) {
             :root {
                 --wid: 100%;
-                --arrowActualSize: 2px;
-                --leftMarg: 2%;
-                --hei: 30%;
+                --arrowActualSize: 20px;
+                --hei: 35%;
+                --splHeight:60%;
             }
 
+        }
+
+        @media(max-height: 600px){
+          :root{
+          --hei:60%;
+          --wid:50%;
+          }
+        }
+        .splHeight{
+          height: var(--splHeight);
         }
     </style>
 
@@ -311,27 +324,27 @@
             <!--slide 1-->
             <div class="slide" id="slide-1">
                 <a href="https://imgur.com/QB6GsUO.png">
-                    <img src="https://imgur.com/QB6GsUO.png" width="100%" height="100%" />
+                    <img src="https://imgur.com/QB6GsUO.png" width="100%"  class="splHeight"/>
                 </a>
             </div>
 
             <!--slide 2-->
             <div class="slide" id="slide-2">
                 <iframe src="https://drive.google.com/file/d/1ZknWf2BKG7oaMPnH26HpF3D5lUHbhx9I/preview" width="100%"
-                    height="100%">
+                     class="splHeight">
                 </iframe>
             </div>
 
             <!--slide 3-->
             <div class="slide" id="slide-3">
                 <a href="https://imgur.com/p3TB7by.png">
-                    <img src="https://imgur.com/p3TB7by.png" width="100%" height="100%" />
+                    <img src="https://imgur.com/p3TB7by.png" width="100%"  class="splHeight" />
                 </a>
             </div>
 
             <!--slide 4-->
             <div class="slide" id="slide-4">
-                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/_JtxJNpDlb4?autoplay=0"
+                <iframe width="100%"  class="splHeight" src="https://www.youtube.com/embed/_JtxJNpDlb4?autoplay=0"
                     frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen>
                 </iframe>
@@ -339,14 +352,14 @@
 
             <!--slide 5-->
             <div class="slide" id="slide-5">
-                <a href="https://imgur.com/TAsmTYO.png" width="100%" height="100%">
-                    <img src="https://imgur.com/TAsmTYO.png" width="100%" />
+                <a href="https://imgur.com/TAsmTYO.png" >
+                    <img src="https://imgur.com/TAsmTYO.png" width="100%"  class="splHeight"/>
                 </a>
             </div>
 
             <!--slide 6-->
             <div class="slide" id="slide-6">
-                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/FXTgITg-UAM" frameborder="0"
+                <iframe width="100%"  class="splHeight" src="https://www.youtube.com/embed/FXTgITg-UAM" frameborder="0"
                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
                 </iframe>
             </div>
