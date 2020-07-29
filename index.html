@@ -5,6 +5,14 @@
         <h1>SpaceSnake</h1>
         <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
         <style>
+          :root{
+            --pcCompatiblePlace:left;
+            --pcCompatibleAlign:center;
+            --pcCompatibleHeight:14px;
+            --pcCompatibleWidth:150px;
+            --pcCompatibleFont:22px;
+            --pcCompatibleMarginLeft:20%;
+          }
             
             h1{
                 border:2px solid rgb(135, 119, 224) ;
@@ -37,26 +45,23 @@
 
            
             #nav{
-                width: 750px;
-                margin: 0 auto;
+                margin-left: 20%;
                 list-style: none;
             }
 
             #nav li{
-                float: left;
+                float: var(--pcCompatiblePlace);
             }
 
 
             #nav a{
                 display: block;
-                text-align: center;
-                width: 150px;
+                text-align: var(--pcCompatibleAlign);
+                width: var(--pcCompatibleWidth);
                 text-decoration: none;
                 color: rgb(74, 92, 255);
-                
-                padding: 14px 50px;
-                text-decoration-style: none;
-                font-size: 22px;
+                padding: var(--pcCompatibleHeight) 50px;
+                font-size: var(--pcCompatibleFont);
                 font-family: "Monospace", Times, serif;
             
 
@@ -76,34 +81,17 @@
                 color: rgb(122, 228, 255);
             }
 
-            #intro {
-                font-size: 20px;
-                color: rgb(26, 53, 53);
-                opacity: 98%;
-                margin: 40px;
-                width: 1000px;
-                padding-left: 100px;
-            }
-            #sign {
-                font-size: 20px;
-                color: rgb(8, 17, 17);
-                margin: 40px;
-                width: 1000px;
-                padding-left: 100px;               
+            @media(max-width: 1000px){
+              :root{
+                --pcCompatiblePlace:center;
+                --pcCompatibleAlign:left;
+                --pcCompatibleHeight:44px;
+                --pcCompatibleFont:30px;
+                --pcCompatibleWidth:250px;
+              }
             }
 
-            #ppp{
-                
-                background: linear-gradient(to right,rgb(107, 107, 107) 0%,rgb(133, 133, 133) 50%, rgb(255, 171, 103) 100% );
-                position: absolute;
-                top: 2220px;
-                left: 50px;
-            }
-            img{
-                margin: 200px;
-                top: 30px;
-                width: 10%;
-            }
+        
 
         </style>
 
@@ -124,18 +112,6 @@
         </div>
 
     
-        <div id="ppp">
-            
-            <blockquote id="intro"> The world is a diverse place made not only for human. As the time moves forward, we Sketches
-                that other living species are dissapearing from this world. This seems to be a problem for some and some kind of
-                disaster for some others. It's simply not a big deal. Variety is being maintainned as more variety is being produced
-                in humans, and we will see in some years that humanas were a base for a much larger new bilsphere in which
-                various sub-species of humans will be visible, and it will be what will matter at last.
-            </blockquote>
-            
-            <blockquote id="sign"><abbr title="abhishek mohite">-abhi</abbr></blockquote>
-        </div>
-        
 
 
 
