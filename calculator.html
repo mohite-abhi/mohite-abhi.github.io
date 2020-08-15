@@ -1,0 +1,246 @@
+
+<html>
+<head>
+	<title>amCal</title>
+	
+    <meta meta name="viewport" content=  
+            "width=device-width, user-scalable=no" /> 
+	<style type="text/css">
+		td:hover{
+			outline:none;
+		}
+		:root{
+			--inpHistoryFontSize:22px;
+		}
+		body{
+			background: linear-gradient(90deg, blue, rgb(255, 192, 192));
+		}
+		h1{
+			text-align: center;
+			color:rgb(243, 243, 243);
+			border-width: 10px;
+		}
+		button{
+			font-size:30px;
+			border-width: 0px;
+			border:none;
+			outline:none;
+		}
+		input{
+			font-size:25px;
+			border-color: rgb(177, 177, 177);
+			text-align: right;
+			height: 40px;
+			color:rgb(36, 36, 36);
+
+		}
+		button{
+			width: 100%;
+			height: 50px;
+			border-radius: 10px;
+			color: rgb(58, 58, 58);
+			background-color: rgb(248, 248, 248);
+		}
+		button:hover{
+			background-color: cornflowerblue;
+		}
+		
+		div{position: relative;
+			top:40px;
+			margin: auto;
+			background-color: rgb(243, 243, 243);
+			border-radius: 5px;
+			padding:10px;
+			width: fit-content;
+			
+		}
+		#inputHistory{
+			color: #6e6e6e;
+			border-width: 0px;
+			font-size: var(--inpHistoryFontSize);
+
+		}
+		label{
+			font-size: 25px;
+		}
+
+		.animate{
+			animation-name: incSize;
+			animation-duration: 0.2s;
+		}
+
+		@keyframes incSize{
+			
+			from {
+				font-size: 0px;
+			}
+
+			50% {
+				font-size: 10px;
+			}
+
+			to {
+				font-size: 22px;
+			}
+		}
+
+
+	</style>
+</head>
+
+<body>
+	<h1>Calculator </h1>
+	<div >
+		<table>
+			<tr>
+				<td colspan="4"style="text-align:right;">
+						<p style="height: 22px;">
+							<label type="input" name="inputHistory" id="inputHistory" >Ans=</label>
+						</p>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="4">
+					<input type="input" name="input" id="input">
+				</td>
+			</tr>
+			<tr>	
+				<td>
+					<button onclick="increase('+')">+</button>
+				</td>
+				<td>
+					<button onclick="increase('-')">-</button>
+				</td>
+				<td>
+					<button onclick="increase('*')">*</button>
+				</td>
+				<td>
+					<button onclick="increase('/')">/</button>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<button onclick="increase('(')">(</button>
+					
+				</td>
+				<td>
+					<button onclick="increase('.')">.</button>
+				</td>
+				<td>
+					<button onclick="increase(')')">)</button>
+				</td>
+				
+					<td><button onclick="checkAndProcess()" id="equalButton">=</button></td>
+				</tr>
+				<tr>
+					<td><button onclick="clearThis()" style="font-size: 25px;">AC</button></td>
+					<td><button onclick="backspaceThis()" style="font-size: 20px;font-weight: 500;">DEL</button></td>
+				
+					<td><button onclick="increase(0  )" >0</button>	</td>
+					<td><button onclick="increase(1  )" >1</button>	</td><tr/><tr>
+					<td><button onclick="increase(2  )" >2</button>	</td>
+					<td><button onclick="increase(3  )" >3</button>	</td>
+					<td><button onclick="increase(4  )" >4</button>	</td>
+					<td><button onclick="increase(5  )" >5</button>	</td><tr/><tr>
+					<td><button onclick="increase(6  )" >6</button>	</td>
+					<td><button onclick="increase(7  )" >7</button>	</td>
+					<td><button onclick="increase(8  )" >8</button>	</td>
+					<td><button onclick="increase(9  )" >9</button>	</td>
+				
+					
+				</tr>
+				<tr>
+					<td><button onclick="showSymb('sin')">sin</button></td>
+					<td><button onclick="showSymb('cos')">cos</button></td>
+					<td><button onclick="showSymb('tan')">tan</button></td>
+					<td><button onclick="showSymb('sqrt')">&nbsp;&#8730&nbsp;&nbsp;</button></td>
+				</tr>
+		</table>
+	</div>
+
+
+
+			</body>
+			<script type="text/javascript">
+				let inp = document.getElementById('input');
+				let inpHis = document.getElementById('inputHistory');
+				function increase(str) {
+					inp.value = inp.value + str;
+				}
+
+
+
+				function checkAndProcess() {
+					var sum;
+
+					if(inpHis.innerHTML == "sin("){
+						inpHis.innerHTML = "sin("+inp.value+")=";
+						inp.value = Math.sin(inp.value);
+					animateALittle();
+						return;
+					}
+
+					if(inpHis.innerHTML == "cos("){
+						inpHis.innerHTML = "cos("+inp.value+")=";
+						inp.value = Math.cos(inp.value);
+					animateALittle();
+						return;
+					}
+
+					if(inpHis.innerHTML == "tan("){
+						inpHis.innerHTML = "tan("+inp.value+")=";
+						inp.value = Math.tan(inp.value);
+					animateALittle();
+						return;
+					}
+
+					if(inpHis.innerHTML == "sqrt("){
+						inpHis.innerHTML = "&#8730;"+"  ("+inp.value+")=";
+						inp.value = Math.sqrt(inp.value);
+					animateALittle();
+						return;
+					}
+					
+					try{
+						sum = Function('"use strict";return (' + inp.value + ')')();
+					}
+					catch(err){
+						alert("syntax error");
+						return;
+					}
+					inpHis.innerHTML = inp.value+"=";
+					inp.value = sum;
+					animateALittle();
+
+				}
+
+				function animateALittle(){
+					inpHis.className = "animate";
+					setTimeout(function(){inpHis.className = "normal";}, 200);
+				}
+
+				function clearThis(){
+					inp.value="";
+					inpHis.innerHTML = "Ans=";
+					inp.placeholder = "";
+
+
+				}
+
+				function backspaceThis(){
+					var str = inp.value;
+					var str1 = "";
+					for (i=0;i<str.length-1;i++){
+						str1 += str[i];
+					}
+					inp.value = str1;
+				}
+
+				function showSymb(trig){
+					inpHis.innerHTML= trig+"(";
+					inp.placeholder = "[give value ]";
+				}
+			</script>
+
+			</html>
+
