@@ -1,48 +1,183 @@
 <html>
-  <head>
-    <title>article list</title>
-    <meta content="nothingness">
+
+<head>
+    <title>Web Apps</title>
+    <meta content="Web Apps">
     <style>
-    	body{
-    		background: linear-gradient(to right, rgb(94, 94, 231) 0%, rgb(81, 103, 126) 50%, rgb(82, 82, 82) 100%);
+        body {
+            background-color: rgba(82, 144, 168, 0.623);
 
-    	}
+        }
 
-		#list a{
-			float: left;
-			clear: left;
-			color: rgb(9, 14, 29);
-			font-size: 33px;
-		}
-		#list{
-			padding-top: 38px;
-			padding-left: 49px;
-			font-family:cursive;
-			
-		}
-		h1{
-			font-size: 49px;
-			font-family: 'Courier New', Courier, monospace;
-		}
+        header {
+            background: repeating-linear-gradient(0deg, rgba(82, 144, 168, 0.623) 0px, rgb(255, 255, 255) 2px, rgba(82, 144, 168, 0.623) 6px) ;
+            width: fit-content;
+            max-width: 400px;
+            margin: auto;
+            border-radius: 5px;
+            margin-top: 40px;
+        }
+
+        h1 {
+            color: rgba(82, 144, 168, 0.623);
+            font-size: 4vw;
+        }
+
+        #list {
+            background-color: rgb(151, 162, 212);
+            max-width: 80%;
+            margin: 1% 0 0 10%;
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+
+        section {
+            display: grid;
+            grid-template-columns: 80% 20%;
+            grid-gap:4px;
+            margin-bottom: 20px;
+        }
+
+        .apps {
+            text-decoration: none;
+            color: rgb(24, 22, 22);
+            font-size: 2.4vw;
+            background-color:  rgb(121, 121, 226);
+            border-radius: 20px 0 0 0;
+            padding-left: 20px;
+            padding-top: 10px;
+        }
+        
+        .visit {
+            background-color: rgb(95, 157, 207);
+            text-align: center;
+            border-radius: 0 20px 0 0;
+            vertical-align: middle;
+            padding-top: 10px;
+        }
+        a{
+            color: rgb(68, 9, 9);
+            font-size: 2vw;
+            text-decoration: none;
+        }
+
+        .visit:hover {
+            width: 105%;
+            box-shadow: 0 0 10px rgb(0, 3, 194);
+        }
+        
+
+        .spl-item {
+            grid-column: 1/3;
+            background: linear-gradient(to bottom, rgb(121, 121, 226),rgb(126, 126, 218), rgb(151, 162, 212));
+            padding-left: 10px;
+            font-size: 1.7vw;
+            color:rgb(17, 16, 16);
+        }
+
+     
+
+
+
+
 
     </style>
 
 
-  	</head>
-  	<body>
-		  <h1 style="padding-left: 488px;padding-top: 35px;">List of articles : </h1>
+</head>
 
-		<div id="list" class="ls" style="overflow-y:scroll;">
-			<a target="_top" href="supportHongKong.html">Support Hong Kong protests!</a>
-			<a target="_top" href="memory_saver.html">A page to simulate a program for saving memories of your journeys</a>
-			<a target="_top" href="tribute_to_ssr.html">thankyou for being you</a>
-			<a target="_top" href="/general_form.html">A normal registration page accepting name, id and email</a>
-			<a target="_top" href="https://mohite.eu-gb.mybluemix.net/">A simple login page made with node.js</a>
-			<a target="_top" href="/calculator.html">mohite presents calculator</a>
-			<a href="/">Coming soon!</a>
-			<a href="/">Coming soon!</a>
+<body>
+    <header>
+        <h1> Web Apps </h1>
+    </header>
 
-		</div>
- 
-	</body>
+    <div id="list" class="ls" style="overflow-y:scroll;">
+        <section>
+            <div class="apps">Support Hong Kong protests!</div>
+            <div class="visit">
+                <a target="_top" href="supportHongKong.html"> <div>Visit</div> </a><br>
+            </div>
+            <div class="spl-item">
+                <p>a simple page which for encouraging the audience to be a part of the hong cong protests from
+                    whereever they are in the world.</p>
+            </div>
+        </section>
+
+        <section>
+            <div class="apps">Save memorible moments from your vacations</div>
+            <div class="visit">
+                <a target="_top" href="memory_saver.html"> <div>Visit</div> </a><br>
+            </div>
+            <div class="spl-item">
+                <p>an app which represents cocept of where we can save our pics and a description
+                    about a vacation.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <div class="apps">A tribute page for late actor Sushant Singh Rajputh</div>
+            <div class="visit">
+                <a target="_top" href="tribute_to_ssr.html"> <div>Visit</div> </a><br>
+            </div>
+            <div class="spl-item">
+                <p>A page showcasing some of moments of shushant from some of his movies like 'kae Po Che!'.</p>
+            </div>
+        </section>
+
+        <section>
+            <div class="apps">A prototype registration page accepting name, id and email</div>
+            <div class="visit">
+                <a target="_top" href="/general_form.html"> <div>Visit</div> </a><br>
+            </div>
+            <div class="spl-item">
+                <p>This page is supposed to be a form for an event where on providing
+                    information it checks whether the id provided is in valid format or not.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <div class="apps">A login page for any website or webapp</div>
+            <div class="visit">
+                <a target="_top" href="https://mohite.eu-gb.mybluemix.net/"> <div>Visit</div> </a><br>
+            </div>
+            <div class="spl-item">
+                <p>Here if you are not already registered, you can register right there and your information will be
+                    saved in an
+                    online database. The speciality of this page is that this is implemented in node.js with the help of
+                    the http.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <div class="apps">A simple calculator with different design than usual.</div>
+            <div class="visit">
+                <a target="_top" href="/calculator.html"> <div>Visit</div> </a><br>
+            </div>
+            <div class="spl-item">
+                <p>This is a simple calculator implemented with the help of javascript.
+                    Special attention has been given in designing.
+                </p>
+            </div>
+        </section>
+        <section>
+            <div class="apps">Coming soon!</div>
+            <div class="visit">
+                <a href=""> <div>Visit</div> </a><br>
+            </div>
+            <div class="spl-item">
+                <p>more information to be released soon.
+                </p>
+            </div>
+        </section>
+
+
+    </div>
+
+</body>
+
 </html>
+
+
