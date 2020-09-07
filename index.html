@@ -7,11 +7,9 @@
         <style>
           :root{
             --pcCompatiblePlace:left;
-            --pcCompatibleAlign:center;
             --pcCompatibleHeight:14px;
             --pcCompatibleWidth:150px;
-            --pcCompatibleFont:22px;
-            --pcCompatibleMarginLeft:20%;
+            --pcCompatibleFont:2vw;
           }
             
             h1{
@@ -45,8 +43,11 @@
 
            
             #nav{
-                margin-left: var(--pcCompatibleMarginLeft);
+                width: fit-content;
+                margin:auto;
                 list-style: none;
+                opacity: 78%;
+
             }
 
             #nav li{
@@ -55,27 +56,18 @@
 
 
             #nav a{
-                display: block;
-                text-align: var(--pcCompatibleAlign);
+                display: inline-block;
                 width: var(--pcCompatibleWidth);
                 text-decoration: none;
                 color: rgb(74, 92, 255);
                 padding: var(--pcCompatibleHeight) 50px;
                 font-size: var(--pcCompatibleFont);
                 font-family: "Monospace", Times, serif;
-            
-
-
-            }
-
-            
-            #nav a:link {
-                color : rgb(100, 47, 136);
                 background-color:rgb(150, 189, 194);
-                overflow: hidden;
-                opacity: 78%;
-            }
             
+
+            }
+
             #nav a:hover {
                 background-color: rgb(154, 138, 219);
                 color: rgb(122, 228, 255);
@@ -84,15 +76,12 @@
             @media(max-width: 1000px){
               :root{
                 --pcCompatiblePlace:center;
-                --pcCompatibleAlign:left;
                 --pcCompatibleHeight:44px;
-                --pcCompatibleFont:30px;
+                --pcCompatibleFont:5vw;
                 --pcCompatibleWidth:250px;
-                --pcCompatibleMarginLeft:15%;
               }
             }
 
-        
 
         </style>
 
