@@ -1,0 +1,165 @@
+:root {
+    --pcCompatiblePlace: left;
+    --pcCompatibleHeight: 14px;
+    --pcCompatibleWidth: 15vw;
+    --pcCompatibleFont: 5vh;
+    --revolve: revolve;
+}
+
+h1 {
+    border: 2px solid rgb(119, 217, 224);
+    border-top-width: 10px;
+    border-right-width: 10px;
+    text-align: center;
+    color: rgba(48, 184, 202, 0.877);
+    font: outline;
+    font: bolder;
+    font-size: 8.5vh;
+    font-family: serif;
+
+}
+
+body {
+    animation: colorchange 6.2s infinite;
+    background-image: url('/home/abhi/Projects/inkskape/abstract-universe-without-earch.png');
+    background-size: 100% 100%;
+}
+
+
+
+#nav {
+    width: fit-content;
+    margin: auto;
+    list-style: none;
+    opacity: 78%;
+    text-align: center;
+    z-index: 5;
+
+}
+
+#nav li {
+    float: var(--pcCompatiblePlace);
+}
+
+
+#nav a {
+    display: inline-block;
+    width: 30vh;
+    text-decoration: none;
+    color: rgb(122, 228, 255);
+    padding: var(--pcCompatibleHeight) 50px;
+    font-size: var(--pcCompatibleFont);
+    font-family: "Monospace", Times, serif;
+    background-color: rgb(77, 189, 206);
+
+
+}
+
+#nav a:hover {
+    background-color: rgb(122, 228, 255);
+    color: rgb(77, 189, 206);
+}
+
+@media(max-width: 1000px) {
+    :root {
+        --pcCompatiblePlace: center;
+        --pcCompatibleHeight: 44px;
+        --pcCompatibleFont: 4vh;
+        --pcCompatibleWidth: 30vw;
+        --revolve: null;
+    }
+
+    body {
+    background-image: url('/home/abhi/Projects/inkskape/abstract-universe-without-earch.png');
+    background-size: auto 100%;
+    }
+    #earth {
+        position: absolute;
+        left: -100px;
+        animation: null;
+    }
+    
+
+}
+
+#earth {
+    position: absolute;
+    left: 10px;
+    animation: var(--revolve) 40s infinite;
+    animation-timing-function: linear;
+    z-index: -2;
+}
+
+@keyframes revolve {
+    0% {
+        left: 0vw;
+        top: 30vh;
+        width: 2vw;
+    }
+
+    8% {
+        left: 2.6vw;
+        top: 20vh;
+    }
+
+    15% {
+        left: 11.5vw;
+        top: 10vh;
+    }
+
+    24% {
+        left: 45vw;
+        width: 0vw;
+        top: 0vh;
+    }
+
+    40% {
+        left: 78.5vw;
+        top: 10vh;
+    }
+
+    50% {
+        left: 87.5vw;
+        top: 20vh;
+    }
+
+    60% {
+        left: 90vw;
+        width: 1.8vw;
+        top: 30vh;
+    }
+
+    69% {
+        left: 87.5vw;
+        top: 40vh;
+    }
+
+    76% {
+        left: 78.5vw;
+        width: 5vw;
+        top: 50vh;
+    }
+
+    84% {
+        left: 45vw;
+        width: 11vw;
+        top: 60vh;
+    }
+
+    90% {
+        left: 11.5vw;
+        top: 50vh;
+    }
+
+    95% {
+        left: 2.6vw;
+        top: 40vh;
+    }
+
+    100% {
+        left: 0vw;
+        width: 2vw;
+        top: 30vh;
+    }
+
+}
