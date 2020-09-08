@@ -1,0 +1,107 @@
+:root{
+  --form-width : 44vw;
+  --expand-width: 50vw;
+}
+
+#hcover{
+  margin-top:40px;
+  padding:2px;
+}
+
+#skin{
+  background-color:rgba(30, 30, 177, 0.418);
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+
+}
+body{
+  font-family: 'Syne', sans-serif;
+  background-image: url('https://cdn4.vectorstock.com/i/1000x1000/65/28/hexagonal-abstract-background-big-data-vector-21416528.jpg');
+  background-repeat: no-repeat;
+  background-size:cover;
+  
+  
+}
+
+label{
+  margin:20px 0px;
+}
+
+.field-cover{
+  margin-bottom:20px;
+}
+
+
+form{
+  background-color:rgba(34, 51, 199, 0.678);
+  width: var(--form-width);
+  padding:3vw;
+  margin:auto;
+  font-size: 3vh;
+  border-radius:3px; 
+  margin-bottom: 50px;
+}
+
+
+.wide_field{
+  color:rgb(80, 80, 80); 
+  font-size: 2.5vh;
+  width: 96%;
+  font-family: 'Syne', sans-serif;
+  border-radius: 4px;
+  border-color: transparent;
+  background-color: white;
+  padding:4px;
+  margin-top: 5px;
+  outline-width: thick;
+}
+
+.wide_field:focus{
+    outline-color: rgb(0, 195, 255);
+    
+  }
+
+  .expand-with-form{
+    width: var(--expand-width);
+    margin:auto;
+    text-align: center;
+    font-size: 4vh;
+  }
+
+  @media(max-width:1000px){
+    :root{
+      --expand-width:70vw;
+      --form-width:64vw;
+    }
+  }
+
+  @media(max-width:650px){
+    :root{
+      --expand-width:80vw;
+      --form-width:74vw;
+    }
+  }
+
+ 
+  #submit{
+    background-color: rgba(0, 0, 255, 0.788);
+
+    color:rgb(236, 235, 235);
+  }
+
+  #submit:hover{
+    box-shadow: 0 0 4px;
+  }
+
+  #submit:active{
+    box-shadow: 0 0 10px;
+  }
+
+
+input[type=checkbox], input[type=radio]{
+  width: 18px;
+  height: 18px;
+}    
+  

@@ -51,14 +51,24 @@ body {
     font-size: var(--pcCompatibleFont);
     font-family: "Monospace", Times, serif;
     background-color: rgb(77, 189, 206);
-
-
+    
+    
 }
 
 #nav a:hover {
     background-color: rgb(122, 228, 255);
     color: rgb(77, 189, 206);
 }
+
+#background{
+    position: fixed;
+    width: 100%;
+    z-index: -3;
+    top: 0px;
+    left: 0px;
+}
+
+
 
 @media(max-width: 1000px) {
     :root {
@@ -70,21 +80,30 @@ body {
     }
 
     body {
-    background-image: url('../pics/abstract-universe-without-earch.png');
-    background-size: auto 100%;
+        background-color: rgba(240, 230, 140, 0.747);
+    
     }
-    #earth {
+    #earth1 {
         position: absolute;
-        left: -100px;
+        left: -500px;
         animation: null;
+    }
+
+    #background{
+        position: fixed;
+        width: 500vh;
+        z-index: -2;
+        top: 0px;
+        left: 0px;
     }
     
 
 }
 
-#earth {
+#earth1 {
     position: absolute;
     left: 10px;
+    width: 0px;
     animation: var(--revolve) 40s infinite;
     animation-timing-function: linear;
     z-index: -2;
