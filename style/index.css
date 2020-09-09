@@ -182,3 +182,30 @@ body {
     }
 
 }
+
+
+#github-cat{
+    position: fixed;
+    animation: cat-float 60s infinite;
+    animation-timing-function: linear;
+    z-index: 2;
+}
+
+@keyframes cat-float{
+
+    0%{
+        transform:rotate(0deg);
+        left:110vw;
+        top:20vh;
+    }
+    50%{
+        transform:rotate(180deg);
+        left:-10vw;
+        top:50vh;
+    }
+    100%{
+        transform:rotate(360deg);
+        left:110vw;
+        top:80vh;
+    }
+}
