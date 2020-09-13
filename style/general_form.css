@@ -1,0 +1,61 @@
+:root {
+    --width_h: 18%;
+    --width_f: 20%;
+  }
+
+  body {
+    background-color: rgb(15, 6, 17);
+  }
+
+  h1 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    padding: 6%;
+    color: rgb(255, 247, 247);
+    background-color: rgb(99, 24, 24);
+    width: var(--width_h);
+    margin: auto;
+    border-radius: 2%;
+  }
+
+  #form {
+    width: var(--width_f);
+    margin: auto;
+    padding: 5%;
+    background-color: rgb(24, 24, 56);
+    margin-top: 2%;
+    border-radius: 40% 0 40% 0;
+  }
+
+  label {
+    color: rgb(217, 217, 255);
+  }
+
+
+
+  .button_pad {
+    padding: 30px 40px 0 40px;
+
+  }
+
+  td {
+    padding: 10px;
+  }
+
+  .some_round {
+    border-radius: 10%;
+    border-width: 0;
+  }
+  @media(max-width: 1280px) {
+    :root {
+      --width_h: 28%;
+      --width_f: 30%;
+    }
+  }
+
+  @media(max-width: 1000px) {
+    :root {
+      --width_h: 88%;
+      --width_f: 90%;
+    }
+  }

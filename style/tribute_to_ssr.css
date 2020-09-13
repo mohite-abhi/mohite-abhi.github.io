@@ -1,0 +1,200 @@
+/*variables to later use for making sliderEnvelop responsive*/
+:root {
+    --arrowSize: 3px;
+    --arrowActualSize: 10px;
+    --hei: 50%;
+    --wid: 75%;
+    --leftMarg: 8%;
+    --splHeight:100%;
+}
+
+h1 {
+    text-align: center;
+    color: rgb(88, 114, 100);
+}
+
+h2 {
+    text-align: center;
+    font-size: 18px;
+    color: rgb(77, 110, 98);
+}
+
+#moreInfoButton {
+    border-radius: 10px;
+    border-width: 0px;
+    color: rgb(77, 110, 98);
+    ;
+    background-color: rgb(228, 255, 246);
+    cursor: pointer;
+}
+
+#sliderEnvelop {
+    height: var(--hei);
+    width: var(--wid);
+    margin: auto;
+
+    background-color: rgb(232, 243, 234);
+    border-radius: 10px;
+
+}
+
+.slider {
+    width: 80%;
+    height: 100%;
+    display: inline-flex;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    margin-left: var(--leftMarg);
+    float: center;
+
+
+}
+
+
+.slide {
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.slider>div {
+    scroll-snap-align: start;
+}
+
+#slide-1 {
+    position: relative;
+    background-color: blanchedalmond;
+    margin: auto;
+}
+
+#slide-2 {
+    position: relative;
+    background-color: blueviolet;
+    margin: auto;
+}
+
+#slide-3 {
+    position: relative;
+    background-color: burlywood;
+    margin: auto;
+}
+
+#slide-4 {
+    position: relative;
+    background-color: crimson;
+    margin: auto;
+}
+
+#slide-5 {
+    position: relative;
+    background-color: darkmagenta;
+    margin: auto;
+}
+
+#slide-6 {
+    position: relative;
+    background-color: darkturquoise;
+    margin: auto;
+}
+
+
+
+
+/* style for left and rigiht arrow buttons */
+
+
+
+/* _| shape designed by only taking right and down side border of a div*/
+.arrow {
+    border: solid black;
+    border-width: 0 var(--arrowSize) var(--arrowSize) 0;
+    padding: 3px;
+    position: relative;
+    top: 45%;
+    height: var(--arrowActualSize);
+    width: var(--arrowActualSize);
+    background-color: transparent;
+    border-radius: 9px 9px 0 9px;
+    cursor: pointer;
+}
+
+/*right arrow by rotating the above  _| shape anticlockwise*/
+#right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    float: right;
+
+}
+
+/*left arrow by rotating the above  _| shape clockwise*/
+#left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
+
+#left:hover,
+#right:hover {
+    --arrowSize: 6px;
+}
+
+/*slide floated on the left arrow, so when arrow expanded it lifted slide, 
+now which now floats on the little wider envelop*/
+#leftArrowEnvelop {
+    float: left;
+    position: relative;
+    top: 45%;
+    width: 0px;
+}
+
+
+
+/*animation causes a flash effect when the slides are changed*/
+.flashEffect {
+    animation-name: flashEffect;
+    animation-duration: 900ms;
+}
+
+
+
+@keyframes flashEffect {
+    0% {
+        opacity: 100%;
+    }
+
+    50% {
+        opacity: 50%;
+    }
+
+    100% {
+        opacity: 100%;
+    }
+
+}
+
+/*to be able to do flashEffect again*/
+.reloadFlashAnimation {
+    background-color: transparent;
+}
+
+
+/*making page more responsive for smaller divices*/
+@media(max-width:1000px) {
+    :root {
+        --wid: 100%;
+        --arrowActualSize: 20px;
+        --hei: 35%;
+        --splHeight:60%;
+    }
+
+}
+
+@media(max-height: 300px){
+  :root{
+  --hei:60%;
+  --wid:50%;
+  }
+}
+
+.splHeight{
+  height: var(--splHeight);
+}

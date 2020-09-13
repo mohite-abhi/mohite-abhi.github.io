@@ -1,0 +1,111 @@
+
+    /*classes*/
+    .inp_iden {
+        padding: 5% 10% 5% 10%;
+        background-color: rgba(151, 237, 240, 0.555);
+        border-radius: 10px;
+      }
+  
+      .inp_field {
+        font-family: monospace;
+        font-size: 20px;
+        float: left;
+        margin: 0 10px 10px 0px;
+      }
+  
+      .submit {
+        padding: 5px 10px 5px 10px;
+        border-radius: 15px;
+        border-width: 0px;
+        background-color: rgba(255, 255, 255, 0.788);
+      }
+  
+      .h1 {
+        font-family: monospace;
+        text-align: center;
+        padding-top: 18%;
+        padding-bottom: 15%;
+        background-color: rgb(151, 245, 248);
+        border-radius: 15px;
+      }
+  
+  
+      /*selectors*/
+  
+      body {
+        background-color: rgba(151, 218, 240, 0.555);
+      }
+  
+      /*ids*/
+  
+      #name {
+        position: relative;
+  
+      }
+  
+      #div1 {
+        width: var(--width2);
+        margin: auto;
+        margin-top: 9%;
+      }
+  
+      
+  
+  
+      /*as the screen width changes so we change the width of the form*/
+  
+      :root {
+        --width: 25%;
+        --height: 45%;
+        --width2: 29%;
+      }
+  
+      #form {
+        width: var(--width);
+        height: var(--height);
+        background-color: rgba(250, 235, 215, 0.966);
+        margin: auto;
+      }
+  
+      /* i learned to do this from the freecodecamp*/
+  
+      @media (max-width: 1060px) {
+        :root {
+          --width: 30%;
+          --height: 47%;
+          --width2: 34%;
+        }
+      }
+  
+      @media (max-width: 888px) {
+        :root {
+          --width: 35%;
+          --height: 49%;
+          --width2: 39%;
+        }
+      }
+  
+      @media (max-width: 768px) {
+        :root {
+          --width: 44%;
+          --height: 51%;
+          --width2: 48%;
+        }
+      }
+  
+      @media (max-width: 611px) {
+        :root {
+          --width: 50%;
+          --height: 53%;
+          --width2: 54%;
+  
+        }
+      }
+  
+      @media (max-width: 431px) {
+        :root {
+          --width: 70%;
+          --height: 55%;
+          --width2: 74%;
+        }
+      }

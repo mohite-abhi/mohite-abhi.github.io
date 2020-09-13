@@ -1,0 +1,183 @@
+<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+
+<html>
+
+<head>
+
+    <link rel="stylesheet" href="../style/documentation.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <main id="main-doc">
+        <div id="under_body">
+
+            <div id="left_boundary">
+                <div id="nav_cover">
+
+                    <nav id="navbar">
+                        <header>
+                            <a
+                                href="https://docs.microsoft.com/en-us/dotnet/csharp/tutorials/intro-to-csharp/hello-world">
+                                <h1>Interactive C# tutorial</h1>
+                            </a>
+
+                        </header>
+                        <div id="link-cover">
+
+                            <a href="#introduction" class="nav-link">Introduction</a>
+                            <a href="#Run_your_first_c#_program" class="nav-link">Run your first c# program</a>
+                            <a href="#DECLARE_AND_USE_VARIABLE" class="nav-link">Declare and use variable</a>
+                            <a href="#WORK_WITH_STRINGS" class="nav-link">Work with strings</a>
+                            <a href="#CONGRATULATIONS" class="nav-link">Congratulations</a>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            <div id="artitle_cover">
+
+                <div></div>
+                <section class="main_section" id="introduction">
+                    <header class="article_heading">Introduction</header>
+                    <p>This tutorial teaches you C# interactively, using your browser to write C# and see the results of
+                        compiling and running your code. It contains a series of lessons that begin with a "Hello World"
+                        program. These lessons teach you the fundamentals of the C# language.</p>
+                    <div id="tip">
+
+                        <p>Tip</p>
+                        <ul>
+                            <li>
+                                As you explore C# (or any programming language), you'll make mistakes when you write
+                                code.
+                            </li>
+                            <li>
+                                That exercise will help you learn the structure of C# code.
+                            </li>
+                            <li>
+                                When the output contains error messages, look closely at the example code, and the code
+                                in
+                                the interactive window to see what to fix.
+                            </li>
+                            <li>
+                                The compiler will find those errors and report them to you.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <p></p>
+                </section>
+                <section class="main_section" id="Run_your_first_c#_program">
+                    <header class="article_heading">Run your first c# program</header>
+                    <p>Run the following code in the interactive window. Select the Enter focus mode button. Then, type
+                        the following code block in the interactive window and select Run:</p>
+                    <code>Console.WriteLine("Hello World!");</code>
+                    <p>Congratulations! You've run your first C# program. It's a simple program that prints the message
+                        "Hello World!". It used the Console.WriteLine method to print that message. Console is a type
+                        that represents the console window. WriteLine is a method of the Console type that prints a line
+                        of text to that text console.
+
+                        Let's move on and explore more. The rest of this lesson explores working with the string type,
+                        which represents text in C#. Like the Console type, the string type has methods. The string
+                        methods work with text.</p>
+                </section>
+
+                <section class="main_section" id="DECLARE_AND_USE_VARIABLE">
+                    <header class="article_heading">Declare and use variable</header>
+                    <p>Your first program is limited to printing one message. You can write more useful programs by
+                        using variables. A variable is a symbol you can use to run the same code with different values.
+                        Let's try it! Replace the code you've written in the interactive window with the following code:
+                    </p>
+                    <code>string aFriend = "Bill";
+                        Console.WriteLine(aFriend);</code>
+                    <p>The first line declares a variable, aFriend, and assigns it a value, "Bill". The second line
+                        prints out the name.
+
+                        You can assign different values to any variable you declare. You can change the name to one of
+                        your friends. Add these two lines in the interactive window following the code you've already
+                        added:</p>
+                    <code>aFriend = "Maira";
+                            Console.WriteLine(aFriend);</code>
+
+                    <p>Notice that the same line of code prints two different messages, based on the value stored in the
+                        aFriend variable.
+
+                        You may have also noticed that the word "Hello" was missing in the last two messages. Let's fix
+                        that now. Modify the lines that print the message to the following:</p>
+                    <code>Console.WriteLine("Hello " + aFriend);</code>
+                    <p>Select Run again to see the results.
+
+                        You've been using + to build strings from variables and constant strings. There's a better way.
+                        You can place a variable between { and } characters to tell C# to replace that text with the
+                        value of the variable.
+
+                        This is called String interpolation.
+
+                        If you add a $ before the opening quote of the string, you can then include variables, like
+                        aFriend, inside the string between curly braces. Give it a try:</p>
+                    <code>Console.WriteLine($"Hello {aFriend}");</code>
+                    <p>Select Run again to see the results. Instead of "Hello {aFriend}", the message should be "Hello
+                        Maira".</p>
+                </section>
+
+                <section class="main_section" id="WORK_WITH_STRINGS">
+                    <header class="article_heading">Work with strings</header>
+                    <p>Your last edit was our first look at what you can do with strings. Let's explore more.
+
+                        You're not limited to a single variable between the curly braces. Try this:</p>
+                    <code>string firstFriend = "Maria";
+                        string secondFriend = "Sage";
+                        Console.WriteLine($"My friends are {firstFriend} and {secondFriend}");</code>
+                    <p>As you explore more with strings, you'll find that strings are more than a collection of letters.
+                        You can find the length of a string using Length. Length is a property of a string and it
+                        returns the number of characters in that string. Add the following code at the bottom of the
+                        interactive window:</p>
+                    <code>Console.WriteLine($"The name {firstFriend} has {firstFriend.Length} letters.");
+                            Console.WriteLine($"The name {secondFriend} has {secondFriend.Length} letters.");</code>
+                    <p> Tip
+
+                        This is a good time to explore on your own. You've learned that Console.WriteLine() writes text
+                        to the screen. You've learned how to declare variables and concatenate strings together.
+                        Experiment in the interactive window. The window has a feature called IntelliSense that makes
+                        suggestions for what you can do. Type a . after the d in firstFriend. You'll see a list of
+                        suggestions for properties and methods you can use.</p>
+                </section>
+
+                <section class="main_section" id="CONGRATULATIONS">
+                    <header class="article_heading">Congratulations</header>
+                    <p>You've completed the "Hello C#" introduction to C# tutorial. You can select the Numbers in C#
+                        link below to start the next interactive tutorial, or you can visit the .NET site to download
+                        the .NET Core SDK, create a project on your machine, and keep coding. The "Next steps" section
+                        brings you back to these tutorials.
+
+                        For further reading on the string type:</p>
+
+
+                    <li>
+                        <a href="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/">
+                            C# Programming Guide topic on strings.
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/">
+                            How to tips on working with strings.
+                        </a>
+                    </li>
+                </section>
+            </div>
+            <div></div>
+        </div>
+
+    </main>
+</body>
+
+</html>
+<!-- 
+        
+        Hello Camper!
+        
+For now, the test suite only works in Chrome! Please read the README below in the JS Editor before beginning. Feel free to delete this message once you have read it. Good luck and Happy Coding! 
+
+- The freeCodeCamp Team 
+
+-->
