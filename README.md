@@ -1,8 +1,9 @@
 #mohite-abhi.github.io
 
-<h1>a simple hobby website to showcase my work.</h1>
+<h1>Introduction</h1>
+a simple hobby website to showcase my photographs/webpages design/art
 
-<h2>visit the static website <a href="https://mohite-abhi.github.io/">here</a></h2>
+visit the static website at <a href="https://mohite-abhi.github.io/">https://mohite-abhi.github.io</a>
 
 
 <ul>
