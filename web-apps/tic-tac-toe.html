@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="./../style/tic-tac-toe.css">
+</head>
+
+<body>
+    <h1>Tic Tac Toe</h1>
+    <div id="entry">
+        <div id="div1">
+            <input placeholder="player 1" id="p1">
+            <input type="submit" onclick="submitPlayerOne()">
+        </div>
+        <div id="div2">
+            <input placeholder="player 2" id="p2">
+            <input type="submit" onclick="submitPlayerTwo()">
+        </div>
+    </div>
+    <div id="greetings">abhishek won</div>
+    <div id="divTable">
+        <table>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        <p id="turn"></p>
+    </div>
+</body>
+<script src="./../script/tic-tac-toe.js"></script>
+
+</html>

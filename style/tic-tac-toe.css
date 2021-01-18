@@ -1,0 +1,63 @@
+*{
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body{
+    background-color: #aff4ffe3;
+}
+
+h1{
+    margin:20px;
+    text-align: center;
+}
+
+table{
+    margin:40px auto;
+}
+
+td:hover{
+    cursor: pointer;
+}
+
+table, th, td {
+    border: 1px rgba(106, 236, 112, 0.74);
+    border-style: groove;
+    border-radius: 5px;
+  }
+
+#entry{
+    width: fit-content;
+    margin: auto;
+}
+
+td{
+    text-align: center;
+    font-size: 45px;
+    width: 55px;
+    height: 55px;
+}
+
+#turn{
+    width: fit-content;
+    margin: auto;
+    padding:10px;
+    border: solid rgba(0, 0, 255, 0.425) 2px;
+    border-radius: 10px;
+}
+
+#greetings{
+    position: fixed;
+    left: 20%;
+    background-color: #eac176e3;
+    border-radius: 10px;
+    padding: 10% 20%;
+    font-size: 50px;
+    visibility: hidden;
+}
+
+input{
+    border:none;
+    padding:7px;
+    margin:5px;
+    border-radius: 10px;
+}
