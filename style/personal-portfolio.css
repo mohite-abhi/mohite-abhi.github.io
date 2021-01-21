@@ -1,0 +1,172 @@
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Mukta', sans-serif;
+    color: rgb(41, 41, 41);
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#navbar {
+    position: fixed;
+    top: 0px;
+    z-index: 5;
+    background: linear-gradient(90deg, rgba(16, 139, 102, 0.973), rgba(8, 68, 50, 0.979));
+    width: 100%;
+}
+
+#under-navbar a {
+    font-size: 24px;
+    text-decoration: none;
+    color: rgb(202, 202, 202);
+    width: fit-content;
+    float: right;
+    padding: 20px 30px;
+    transition: background-color 0.3s ease-out;
+}
+
+#under-navbar a:hover {
+    background-color: rgb(37, 43, 48);
+}
+
+#welcome-section {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: linear-gradient(45deg, rgb(176, 194, 201), rgb(63, 182, 212));
+    z-index: -1;
+}
+
+h1,
+h2 {
+    position: relative;
+    top: 50%;
+    margin: auto;
+    width: fit-content;
+    font-size: 45px;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+#empty {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    left: 0;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.021);
+}
+
+.topics {
+    padding: 100px;
+    width: fit-content;
+    margin: auto;
+    font-size: 30px;
+    text-align: center;
+}
+
+.under-topic {
+    font-size: 35px;
+}
+
+#projects {
+    background-color: rgb(45, 123, 143);
+    z-index: 3;
+    padding-bottom: 50px;
+    color: white;
+}
+
+#project-grid {
+    display: grid;
+    grid-template-columns: 35vw 35vw;
+    gap: 10vw;
+    width: fit-content;
+    margin: auto;
+}
+
+.project-tile {
+    height: auto;
+    width: 35vw;
+    border-radius: 20px;
+}
+
+.project-detail {
+    text-align: center;
+    font-size: 20px;
+}
+
+.surround {
+    color: transparent;
+    transition: color 0.3s ease-out;
+}
+
+.project-tile:hover .surround {
+    color: rgb(255, 255, 255);
+}
+
+ul {
+    display: flex;
+    list-style: none;
+    width: fit-content;
+    background-color: whitesmoke;
+    margin: auto;
+    font-size: 25px;
+    text-align: center;
+    padding-left: 0;
+}
+
+li {
+    padding: 20px 40px;
+    border-radius: 10px;
+    transition: box-shadow 0.3s ease-out;
+}
+
+li:hover {
+    box-shadow: 0 0 20px rgb(8, 68, 50);
+    cursor: pointer;
+}
+
+ul a {
+    text-decoration: none;
+    color: rgb(8, 68, 50);
+}
+
+#profile {
+    background-color: rgb(86, 186, 211);
+}
+
+#footer {
+    margin-top: 30vh;
+    border: solid rgb(8, 68, 50);
+    border-width: 5px 0px 0px 0px;
+    padding: 30px;
+    text-align: center;
+}
+
+@media(max-width:1000px) {
+    #project-grid {
+        grid-template-columns: 70vw;
+    }
+    .project-tile {
+        width: 70vw;
+    }
+    ul {
+        flex-direction: column;
+    }
+    li {
+        width: 50vw;
+    }
+}
