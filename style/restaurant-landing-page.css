@@ -1,0 +1,119 @@
+*{
+    border-radius: 10px;
+    color: rgb(37, 37, 37);
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body{
+    background-color: #aaff51;
+    overflow-y: hidden;
+}
+
+h1{
+    width: fit-content;
+    padding: 20px 0 4px 20px;
+    
+}
+
+div#mainBody{
+    display: flex;
+    margin: auto;
+    background-color: #c7ff8c;
+    width: 98vw;
+    margin-top: 50px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+
+    margin: 20px;
+    scrollbar-color: #ff767663 #ff77772b;
+    scroll-behavior: smooth;
+}
+
+element {
+    display: flex;
+    overflow-x: hidden;
+}
+
+img#homePic{
+    width: inherit;
+    height: auto;
+    overflow-y: hidden;
+}
+
+p#review{
+    width: 20vw;
+    margin: 30px;
+    float: right;
+}
+
+div#imgDiv{
+    width: 65vw;
+    float: left;
+    height: 26vw;
+    
+}
+
+div#descDiv{
+    background-color:#f2ff61;
+    width: 33vw;
+    float: right;
+}
+
+p#desc{
+    margin: 20px;
+    width: 80%;
+}
+
+#header{
+    margin: auto;
+    width: 38vw;
+    background-color:#f3ff6a;
+}
+
+#grid{
+    display: grid;
+    width: fit-content;
+    grid-template-columns: 10vw 10vw 10vw;
+    grid-column-gap: 20px;
+    
+}
+
+#grid-item{
+    background-color: #bbff74;
+    font-size: 3.5vw;
+    padding: 3px;
+    text-align: center;
+    margin-bottom: 10px;
+    cursor: pointer;
+    width: min-content;
+    margin-left: 19px;
+}
+
+#picture{
+    position: relative;
+    height: inherit;
+}
+
+div#pic {scroll-snap-align: center;overflow-x: hidden;height: 40vh;width: inherit;background-color: rgba(255, 212, 212, 0);}
+div#dish {
+    float: left;
+    margin: 6px;
+    padding: 5px;
+    background-color: #e1ffff;
+    width: 40vh;
+}
+
+
+div#imgText {
+    background-color: #fbcfff;
+    width: inherit;
+    padding: 2px;
+    margin-top: 2px;
+}
+
+div#dishName {
+    background-color: #fffbdd;
+    font-size: 4vh;
+    padding: 3px;
+}
+
