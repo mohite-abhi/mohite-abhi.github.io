@@ -5,6 +5,9 @@
     background-color: #fefcf5;
 }
 
+#footer a{
+    background-color: #f5f5dc00;
+}
 
 #page{
     display: grid;
@@ -111,11 +114,12 @@
 
 #footer{
     grid-area: footer;
-    background-color: #f9f9f9;
+    background-color: #fefcf5;
     margin: 1vh;
-    height: 8vh;
+    padding: 1.3%;
 
     border-radius: 7px;
+    text-align: center;
 }
 
 #project{
