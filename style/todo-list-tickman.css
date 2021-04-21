@@ -1,0 +1,633 @@
+*{
+    font-family: 'Work Sans', sans-serif;
+    /* border-radius: 2%; */
+    color: #8e7b60;
+    background-color: #fefcf5;
+}
+
+
+#page{
+    display: grid;
+    grid-template-columns: 25% 25% 48% 2%;
+    grid-template-rows: auto;
+    grid-template-areas: 
+      "header header header header"
+      "project tasks tasks sidebar"
+      "footer footer footer footer";
+    /* width: 20%;
+    height: 90%;
+    margin: auto; */
+    background-color:#fcf2ba;
+    border-radius: 12px;
+}
+
+#header{
+    display: grid;
+    grid-template-columns: 10% 10% 60% 20%;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "symbol . sitename username";
+    grid-area: header;
+    height: 8vh;
+    margin: 1vh;
+    background-color: #fefcf5;
+    border-radius: 9px;
+}
+
+#logo{
+    grid-area: symbol;
+    /*! justify-self: center; */
+    /* height: max-content; */
+    /* background-color: darkcyan; */
+    /*! align-self: center; */
+    
+    background-color: #9acd3200;
+    /*! position: absolute; */
+    /*! top: 0px; */
+    /*! left: 52px; */
+}
+
+#logo img{
+    
+    border-radius: 10px;
+    width: 62%;
+    max-height: auto;
+    background-color:#cd5c5c00;
+    padding-left: 51px;
+    position: relative;
+    bottom: 13px;
+}
+
+#sitename{
+    color: #fbec9a;
+    grid-area: sitename;
+    /* height: max-content; */
+    font-size: 4vh;
+    justify-self: center;
+    /*! align-items: center; */
+    text-align: center;
+    padding: 8px;
+    background-color: #ffe4c405;
+    margin-right: 5px;
+}
+
+
+
+#username{
+    justify-self: center;
+    display: grid;
+    grid-template-columns: 90% 10%;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "nme ok";
+    align-self: center;
+    grid-area: username;
+    height: 4vh;
+    margin: 2px;
+    background-color: #fffbe5;
+    text-align:center;
+    font-size: 2.5vh;
+    border-radius: 9px;
+    padding: 4px;
+    cursor: pointer;
+}
+
+.username .uname{
+    justify-self: self-start;
+    font-size: 2.2vh;
+    /* height: 20px; */
+    grid-area: nme;
+    border-style: solid;
+    border-radius: 7px;
+    border-color: #fff2ae;
+}
+
+#username .ok{
+    justify-self: center;
+    grid-area: ok;
+    font-size: 3.5vh;
+    padding: 0 4px;
+}
+
+#footer{
+    grid-area: footer;
+    background-color: #f9f9f9;
+    margin: 1vh;
+    height: 8vh;
+
+    border-radius: 7px;
+}
+
+#project{
+    display: grid;
+    grid-template-rows: 8% 92%;
+    grid-template-columns: 10% 90%;
+    grid-template-areas: 
+      "button head"
+      "list list";
+
+    grid-area: project;
+    background-color:#fff7d0;
+    height: 75vh;
+    margin: 1vh;
+    border-radius: 16px;
+}
+
+#project #projButton{
+    grid-area: button;
+    align-self: end;
+    height: fit-content;
+    margin-left: 18px;
+    font-size: 3vh;
+    background-color: #fff49b;
+    text-align: center;
+    align-self: center;
+    border-radius: 15px;
+    justify-self: center;
+    padding: 3px 10px 4px 10px;
+    cursor: pointer;
+}
+
+#project #head{
+    grid-area: head;
+    height: max-content;
+    background-color: #fff0;
+    margin: 2px;
+    text-align: center;
+    font-size: 3vh;
+    border-radius: 6px;
+    margin-right: 33px;
+    padding: 0px;
+}
+
+#project #list{
+    grid-area: list;
+    background-color: #fffbe5;
+    margin: 2px;
+    overflow-y: scroll;
+    border-radius: 13px;
+    scrollbar-width: none;
+}
+
+.projectItem{
+    display: grid;
+    grid-template-columns: 92% 8%;
+    grid-template-rows: auto;
+    grid-template-areas: 
+      "name del";
+    font-size: 3vh;
+    background-color:#fac3ff00;
+    margin: 5px 1px;
+    /* height: max-content; */
+    padding: 1px;
+    border-radius: 6px;
+}
+
+
+.projectItem .name{
+    grid-area: name;
+    background-color:#fff49b;
+    border-radius: 27px;
+    padding-left: 10px;
+    border-style: solid;
+    border-width: 2px 1px 2px 3px;
+    border-color: #f7d100;
+    cursor: pointer;
+}
+
+.projectItem .del{
+    grid-area: del;
+    background-color: rgba(123, 123, 123, 0.05);
+    padding-bottom: 0px;
+    text-align: center;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+
+.projectItem .projInput{
+    grid-area: name;
+    background-color:#fff49b;
+    font-size: 2.5vh;
+    border-width: 0px;
+    border-radius: 27px;
+    margin: 2px;
+    padding-left: 10px;
+}
+textarea:focus{
+    outline: none;
+}
+input:focus{
+    outline:none;
+    /* outline-color: chartreuse; */
+}
+
+.projectItem .projSave{
+    grid-area: del;
+    background-color: rgb(255, 244, 155);
+    border-radius: 19px;
+    margin: 1px;
+    cursor: pointer;
+}
+
+
+
+
+#tasks{
+    display: grid;
+    grid-template-rows: 8% 92%;
+    grid-template-columns: 5% 95%;
+    grid-template-areas: 
+      "button head"
+      "taskList taskList";
+      
+    grid-area: tasks;
+    margin: 1vh;
+    height: 75vh;
+    background-color: #fffbe5;
+    border-radius: 16px;
+    padding: 2px;
+}
+
+#tasks #button{
+    grid-area: button;
+    align-self: end;
+    height: fit-content;
+    margin: 2px;
+    font-size: 3vh;
+    background-color: #fff2ae;
+    text-align: center;
+    align-self: center;
+    border-radius: 15px;
+    justify-self: center;
+    padding: 3px 10px 4px 10px;
+    cursor: pointer;
+}
+
+#tasks #head{
+    grid-area: head;
+    height: max-content;
+    background-color: #f9f9f900;
+    margin: 2px;
+    text-align: center;
+    font-size: 3vh;
+    align-self: center;
+    border-radius: 5px;
+}
+
+#tasks #taskList{
+    grid-area: taskList;
+    background-color: rgba(253, 253, 253, 0.66);
+    margin: 2px;
+    overflow-y: scroll;
+    border-radius: 9px;
+    scrollbar-width: none;
+    padding: 2px;
+}
+
+
+.taskItem{
+    display: grid;
+    grid-template-columns: 5% 30% 45% 15% 5%;
+    grid-template-rows: auto;
+    grid-template-areas: 
+      "tick title description duedate delete";
+    font-size: 3vh;
+    background-color:rgb(255, 242, 174);
+    font-size: 2.5vh +1 vw;
+    margin: 5px 1px;
+    /* height: max-content; */
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.taskItem .tick{
+    grid-area: tick;
+    /* height: fit-content; */
+    margin: 2px;
+    background-color: #69696900;
+    text-align: center;
+    justify-self: center;
+    align-self: center;
+    border-radius: 34px;
+    font-size: 3.5vh;
+}
+
+.taskItem .title{
+    grid-area: title;
+    /* font-size: 3vh; */
+    /* height: fit-content; */
+    margin: 2px;
+    background-color: #fff6c500;
+    text-align: left;
+    border-radius: 7px;
+}
+
+.taskItem .description{
+    grid-area: description;
+    height: 4vh;
+    min-height: 0;
+    margin: 2px;
+    /* font-size: 3vh; */
+    background-color: #fffbe3a3;
+    text-align: left;
+    overflow: hidden;
+    border-radius: 8px;
+    padding: 0 9px;
+}
+
+.taskItem .duedate{
+    grid-area: duedate;
+    /* height: fit-content; */
+    margin: 2px;
+    /* font-size: 3vh; */
+    background-color: #fff5be00;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.taskItem .delete{
+    grid-area: delete;
+    /* height: fit-content; */
+    margin: 2px;
+    /* font-size: 3vh; */
+    background-color: #f8f4df;
+    text-align: center;
+    border-radius: 19px;
+    padding: 0px 10px;
+    justify-self: center;
+}
+
+
+
+.detailedTaskItem{
+    display: grid;
+    grid-template-columns: 5% 10% 55% 15% 15%;
+    grid-template-rows: 15% 25% 60%;
+    /* row-gap: 1%;
+    column-gap: 1%; */
+    grid-template-areas: 
+      "tick title title duedate duedate"
+      ". description description description edit"
+      "plus checklist checklist checklist save";
+    font-size: 3vh;
+    background-color:rgb(255, 242, 174);
+    margin: 5px 1px;
+    /* height: 70%; */
+    height: 50%;;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.detailedTaskItem .saveTask{
+    grid-area: save;
+    /* height: fit-content; */
+    /* font-size: 3vh; */
+    background-color: #fefcf5;
+    margin: 2px;
+    align-self: center;
+    text-align: center;
+    /* text-align: center; */
+    border-radius: 5px;
+    justify-self: center;
+    padding: 4px 23px;
+    cursor: pointer;
+}
+
+.detailedTaskItem .editButton{
+    grid-area: save;
+    /* height: fit-content; */
+    /* font-size: 3vh; */
+    background-color: #fefcf5;
+    margin: 2px;
+    align-self: center;
+    text-align: center;
+    /* text-align: center; */
+    justify-self: center;
+    padding: 5px 11px;
+    border-radius: 9px;
+    align-self: center;
+    cursor: pointer;
+}
+
+.detailedTaskItem .plus{
+    grid-area: plus;
+    /* height: fit-content; */
+    /* font-size: 3vh; */
+    background-color: #fefcf5;
+    margin: 2px;
+    align-self: center;
+    /* text-align: center; */
+    border-radius: 4px 20px 20px 4px;
+    cursor: pointer;
+}
+
+.detailedTaskItem .duedateInput{
+    grid-area: duedate;
+    /* text-align: center; */
+    /* height: fit-content; */
+    font-size: 2.5vh;
+    margin: 2px;
+    background-color: #fff;
+    border-width: 1px;
+    border-radius: 10px;
+    padding: 5px;
+    border-color: #ffe99a;
+    border-style: solid;
+    cursor: pointer;
+    text-align: center;
+}
+
+.detailedTaskItem .titleInput{
+    grid-area: title;
+    /* text-align: center; */
+    /* height: fit-content; */
+    margin: 2px;
+    font-size: 2.5vh;
+    background-color: #fff;
+    border-width: 1px;
+    border-radius: 10px;
+    padding: 5px;
+    border-color: #ffe99a;
+    border-style: solid;
+}
+
+.detailedTaskItem .descriptionInput{
+    grid-area: description;
+    /* height: fit-content; */
+    font-size: 2.5vh;
+    margin: 2px;
+    /* overflow-y: scroll; */
+    /* text-align: center; */
+    background-color: #fff;
+    padding: 5px;
+    border-width: 1px;
+    border-radius: 10px;
+    border-color: #ffe99a;
+    border-style: solid;
+    resize: none;
+}
+
+
+.detailedTaskItem .checklistInput{
+    grid-area: checklist;
+    /* height: fit-content; */
+    font-size: 3vh;
+    background-color: white;
+    margin: 2px;
+    overflow-y: scroll;
+    /* text-align: center; */
+    scrollbar-width: none;
+    padding: 4px;
+    border-radius: 9px;
+}
+
+
+.checklistinputitem{
+    display: grid;
+    grid-template-columns: 5% 95%;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "tick1 detail";
+    background-color: white;
+}
+
+.checklistinputitem .tick2 {
+    grid-area: tick1;
+    background-color: rgb(242, 240, 237);
+    margin: 3px;
+    font-size: 2.5vh;
+    border-radius: 4px 4px 4px 4px;
+    margin: 0px;
+    padding: 8px 8px;
+    justify-self: center;
+    align-self: center;
+}
+
+.checklistinputitem .detail2 {
+    margin: 3px;
+    font-size: 2.5vh;
+    grid-area: detail;
+    background-color: white;
+    border-style: solid;
+    border-radius: 15px;
+    padding: 0 8px;
+    border-color: #fff2ae;
+}
+
+
+
+
+.detailedTaskItem .tick{
+    grid-area: tick;
+    /* height: fit-content; */
+    /* font-size: 3vh; */
+    background-color: #69696900;
+    margin: 2px;
+    /* text-align: center; */
+    justify-self: center;
+    align-self: center;
+    font-size: 3.5vh;
+    cursor: pointer;
+}
+
+.detailedTaskItem .duedate{
+    grid-area: duedate;
+    /* height: fit-content; */
+    /* font-size: 3vh; */
+    /* text-align: center; */
+    font-size: 2.5vh;
+    margin: 2px;
+    background-color: #fff;
+    border-width: 0px;
+    border-radius: 10px;
+    padding: 5px;
+    border-color: #ffe99a;
+    border-style: solid;
+    /* cursor: pointer; */
+    text-align: center;
+    
+}
+
+.detailedTaskItem .title{
+    grid-area: title;
+    /* height: fit-content; */
+    /* font-size: 3vh; */
+    /* text-align: center; */
+    margin: 2px;
+    font-size: 2.5vh;
+    background-color: #fff;
+    border-width: 0px;
+    border-radius: 10px;
+    padding: 5px;
+    border-color: #ffe99a;
+    border-style: solid;
+}
+
+.detailedTaskItem .description{
+    grid-area: description;
+    /* height: fit-content; */
+    font-size: 2.5vh;
+    margin: 2px;
+    overflow-y: scroll;
+    background-color: #fff;
+    padding: 5px;
+    border-radius: 10px;
+    scrollbar-width: none;
+    /* text-align: center; */
+}
+
+
+.detailedTaskItem .checklist{
+    grid-area: checklist;
+    /* height: fit-content; */
+    font-size: 3vh;
+    background-color: white;
+    margin: 2px;
+    overflow-y: scroll;
+    /* text-align: center; */
+    scrollbar-width: none;
+    padding: 4px;
+    border-radius: 9px;
+    /* text-align: center; */
+}
+
+
+.checklistitem{
+    display: grid;
+    grid-template-columns: 5% 95%;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "tick1 detail";
+    background-color: white;
+
+}
+
+.checklistitem .tick {
+    cursor: pointer;
+    grid-area: tick1;
+    background-color: rgba(242, 240, 237, 0);
+    margin: 3px;
+    font-size: 3vh;
+    border-radius: 14px;
+    /* margin: 0px; */
+    /*! padding: 0px 0px; */
+    justify-self: center;
+    align-self: center;
+}
+
+
+
+.checklistitem .detail {
+    margin: 3px;
+    grid-area: detail;
+    font-size: 2.5vh;
+    grid-area: detail;
+    background-color: white;
+    border-style: solid;
+    border-radius: 15px;
+    padding: 4px 9px;
+    border-color: #fff2ae;
+    border-width: 2px;
+}
+
