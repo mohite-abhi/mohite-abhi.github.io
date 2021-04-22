@@ -343,11 +343,12 @@ input:focus{
 .taskItem .duedate{
     grid-area: duedate;
     /* height: fit-content; */
-    margin: 2px;
+    margin: 4px 2px;
     /* font-size: 3vh; */
     background-color: #fff5be00;
     text-align: center;
     border-radius: 4px;
+    font-size: 1.6vh;
 }
 
 .taskItem .delete{
@@ -430,12 +431,12 @@ input:focus{
     grid-area: duedate;
     /* text-align: center; */
     /* height: fit-content; */
-    font-size: 2.5vh;
+    font-size: 1.2vh;
     margin: 2px;
     background-color: #fff;
     border-width: 1px;
     border-radius: 10px;
-    padding: 5px;
+    padding: 0px;
     border-color: #ffe99a;
     border-style: solid;
     cursor: pointer;
@@ -635,3 +636,213 @@ input:focus{
     border-width: 2px;
 }
 
+
+@media only screen and (max-width: 768px){
+    * {
+     font-size: 3vw  
+    }
+      
+      #logo img{
+          position: inherit;
+          width:100%;
+              
+      }
+      
+      .taskItem .delete {
+      grid-area: delete;
+      height: fit-content;
+      margin: 0px;
+      font-size: 2vh;
+      background-color: #f8f4df;
+      text-align: center;
+      border-radius: 19px;
+      padding: 0px 3px 1px 3px;
+      justify-self: center;
+      align-self: center;
+      margin-top: 17px;
+      }
+      
+      .projectItem .name {
+      grid-area: name;
+      background-color: #fff49b;
+      border-radius: 27px;
+      padding-left: 10px;
+      border-style: solid;
+      border-width: 2px 1px 2px 3px;
+      border-color: #f7d100;
+      cursor: pointer;
+      width: 78%;
+  }
+      
+      .projectItem .del {
+      grid-area: del;
+      background-color: rgb(248, 244, 223);
+      padding: 0px 6px;
+      text-align: center;
+      border-radius: 10px;
+      cursor: pointer;
+      justify-self: center;
+      align-self: center;
+  }
+      
+      #project #head {
+      grid-area: head;
+      height: max-content;
+      background-color: #fff0;
+      margin: 0px;
+          margin-right: 0px;
+      font-size: 3vh;
+      border-radius: 6px;
+      margin-right: 0px;
+      padding: 4px;
+      justify-self: end;
+      align-self: center;
+      font-size: 2.5vh;
+  }
+      
+      #project #projButton {
+      grid-area: button;
+      align-self: end;
+      height: fit-content;
+      margin-left: 18px;
+      font-size: 2.5vh;
+      background-color: #fff49b;
+      text-align: center;
+      align-self: center;
+      border-radius: 15px;
+      justify-self: center;
+      padding: 0px 4px;
+      cursor: pointer;
+      align-self: center;
+  }
+      
+      #tasks #button {
+      grid-area: button;
+      align-self: end;
+      height: fit-content;
+      margin-left: 0px;
+      font-size: 2.5vh;
+      background-color: #fff2ae;
+      text-align: center;
+      align-self: end;
+      border-radius: 15px;
+      justify-self: start;
+      padding: 1px 6px 2px 7px;
+      cursor: pointer;
+      text-justify: initial;
+  }
+      
+      #tasks #taskList {
+      grid-area: taskList;
+      background-color: rgba(253, 253, 253, 0.66);
+      margin: 0px;
+      overflow-y: scroll;
+      border-radius: 9px;
+      scrollbar-width: none;
+      padding: 0px;
+  }
+      
+      
+      .taskItem .tick {
+      grid-area: tick;
+      height: fit-content;
+      margin: 2px;
+      background-color: #69696900;
+      text-align: center;
+      justify-self: center;
+      align-self: center;
+      border-radius: 34px;
+      font-size: 2.5vh;
+  }
+    
+    .taskItem .delete {
+    grid-area: delete;
+    height: fit-content;
+    margin: 0px;
+        margin-top: 0px;
+    font-size: 2vh;
+    background-color: #f8f4df;
+    text-align: center;
+    border-radius: 19px;
+    padding: 0px 3px 1px 3px;
+    justify-self: center;
+    align-self: center;
+    margin-top: 17px;
+}
+    
+    .taskItem .duedate {
+    grid-area: duedate;
+    height: fit-content;
+    margin: 4px 2px;
+    font-size: 3vh;
+    background-color: #fff5be00;
+    text-align: center;
+    border-radius: 4px;
+    font-size: 1.6vh;
+}
+    
+    #project #head {
+    grid-area: head;
+    height: max-content;
+    background-color: #fff0;
+    margin: 0px;
+    margin-right: 0px;
+    margin-right: 0px;
+    font-size: 3vh;
+    border-radius: 6px;
+    margin-right: 0px;
+    padding: 4px;
+    justify-self: end;
+    align-self: center;
+    font-size: 2.5vh;
+}
+
+    #project #projButton {
+    grid-area: button;
+    align-self: end;
+    height: fit-content;
+    margin-left: 18px;
+    font-size: 2.5vh;
+    background-color: #fff49b;
+    text-align: center;
+    align-self: center;
+    border-radius: 15px;
+    justify-self: center;
+    padding: 0px 4px;
+    cursor: pointer;
+    align-self: center;
+}
+
+    #tasks #button {
+    grid-area: button;
+    align-self: end;
+    height: fit-content;
+    margin-left: 0px;
+    font-size: 2.5vh;
+    background-color: #fff2ae;
+    text-align: center;
+    align-self: end;
+    border-radius: 15px;
+    justify-self: start;
+    padding: 1px 6px 2px 7px;
+    cursor: pointer;
+    text-justify: initial;
+}
+
+    .detailedTaskItem .duedateInput {
+    grid-area: duedate;
+    text-align: center;
+    height: fit-content;
+    font-size: 1.2vh;
+    margin: 2px;
+    background-color: #fff;
+    border-width: 1px;
+    border-radius: 10px;
+    padding: 0px;
+    border-color: #ffe99a;
+    border-style: solid;
+    cursor: pointer;
+    text-align: center;
+}
+  }
+   
