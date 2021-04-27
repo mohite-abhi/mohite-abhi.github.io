@@ -1,0 +1,135 @@
+html {
+    scroll-behavior: smooth;
+  }
+  body {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+  }
+  
+  .bgimage {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -4;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("https://thumbs.dreamstime.com/t/akatsuki-seamless-pattern-vector-design-background-126507530.jpg");
+    background-repeat: repeat;
+    background-size: 27vh;
+    filter: blur(2px) grayscale(73%);
+  }
+  
+  h1 {
+    text-align: center;
+    margin-top: 3vh;
+    font-family: "Rock Salt", cursive;
+    color: #ffafaf;
+    font-size: 4vh;
+  }
+  
+  .slideContainer {
+    display: grid;
+    grid-template-columns: 4% 38% 16% 38% 4%;
+    grid-template-rows: 90% 10%;
+    grid-template-areas:
+      "leftScrollButton slideShow slideShow slideShow rightScrollButton"
+      ". . scrollNav . .";
+    height: 60vh;
+    width: 50vw;
+    background-color: rgba(232, 232, 232, 0.33);
+    border-radius: 4px;
+    margin-top: 4vh;
+  }
+  
+  .scrollNav {
+    grid-area: scrollNav;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  
+  .scrollNavButton {
+    background-color: #a5a5a5;
+    align-self: center;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    /* transition: background-color 1000ms ease; */
+    cursor: pointer;
+  }
+  
+  .leftScrollButton {
+    grid-area: leftScrollButton;
+    justify-self: center;
+    align-self: center;
+    text-shadow: 2px 2px 1px;
+    color: #c8c8c8;
+    font-size: 2vw;
+    cursor: pointer;
+  }
+  
+  .rightScrollButton {
+    grid-area: rightScrollButton;
+    justify-self: center;
+    align-self: center;
+    text-shadow: 2px 2px 1px;
+    color: #c8c8c8;
+    font-size: 2vw;
+    cursor: pointer;
+  }
+  
+  .slideShow {
+    margin-top: 10px;
+    grid-area: slideShow;
+    display: flex;
+    background-color: rgb(201, 201, 230);
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    border-radius: 2px;
+  }
+  
+  .slideShow::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .slide {
+    height: 100%;
+    width: 100%;
+    flex-shrink: 0;
+    /* transition: offset; */
+    scroll-snap-align: start;
+    background-color: rgb(99, 13, 13);
+  }
+  
+  @media only screen and (max-width: 1080px) {
+    h1 {
+      margin-top: 10vh;
+      font-size: 3.5vh;
+    }
+    .slideContainer {
+      grid-template-columns: 4% 36% 20% 36% 4%;
+      height: 27vh;
+      width: 94vw;
+      margin-top: 16vh;
+  }
+  
+    .rightScrollButton {
+      font-size: 5vw;
+    }
+  
+    .leftScrollButton {
+      font-size: 5vw;
+    }
+  
+    .scrollNavButton {
+      height: 25px;
+      width: 25px;
+    }
+    .bgimage {
+      filter: blur(5px) grayscale(68%);
+    }
+  }
+  

@@ -23,6 +23,7 @@ body {
     animation: colorchange 6.2s infinite;
     background-image: url('../pics/abstract-universe-without-earch.png');
     background-size: 100% 100%;
+    display: grid;
 }
 
 
@@ -34,7 +35,8 @@ body {
     opacity: 78%;
     text-align: center;
     z-index: 5;
-
+    align-self: center;
+    margin-top: 10px;
 }
 
 #nav li {
