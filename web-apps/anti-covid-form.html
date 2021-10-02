@@ -1,10 +1,18 @@
 <html>
 
 <head>
-  <title>Covid Survey</title>
+  <title>Covid Vaccination</title>
   <link rel="stylesheet" href="../style/anti-covid-form.css">
   <link href="https://fonts.googleapis.com/css2?family=Syne&display=swap" rel="stylesheet">
-
+  <script>
+    function validateForm() {
+  var x = document.forms["covid-form"]["fname"].value;
+  if (x == "") {
+    alert("Name must be filled out");
+    return false;
+  }
+} 
+  </script>
 </head>
 
 <body>
@@ -12,54 +20,53 @@
 
 
     <div class="expand-with-form " id="hcover">
-      <h1 id="title">Anti covid Survey</h1>
+      <h1 id="title">Govt. Vaccines</h1>
     </div>
     <div class="expand-with-form">
-      <p id="description">this form is for those who want to apply for specially designed mask for protection against
-        covid-19.</p>
+      <p id="description">this form for covid vaccine registration</p>
     </div>
 
-    <form id="survey-form">
+    <form id="survey-form" name="covid-form" onsubmit="return validateForm()">
 
       <div class="field-cover">
         <label class="question" id="name-label">Name</label><br>
-        <input type="text" id="name" namne="name" class="wide_field" required placeholder="ex: alpha laporis">
+        <input type="text" id="name" name="fname" class="wide_field" placeholder="ex: alpha laporis">
       </div>
 
       <div class="field-cover">
         <label class="question" id="email-label">E-mail</label><br>
-        <input type="email" id="email" namne="name" class="wide_field" required placeholder="ex: example@email.xyz">
+        <input type="email" id="email" name="ename" class="wide_field" required placeholder="ex: example@email.xyz">
       </div>
 
       <div class="field-cover">
         <label class="question" id="number-label">Age</label><br>
-        <input type="number" id="number" namne="name" min="1" max="120" placeholder="ex: 17" class="wide_field">
+        <input type="number" id="number" name="nname" min="1" max="120" placeholder="ex: 17" class="wide_field">
       </div>
       <div class="field-cover">
-        <label class="question" for id="dropdown">Have you contanted any covid patiend recently?</label><br>
+        <label class="question" for id="dropdown">Choose Vaccine</label><br>
         <select id="dropdown" class="wide_field">
           <option  class="field-cover" value="" disabled selected>select option...</option>
-          <option  class="field-cover" value="maybe">maybe</option>
-          <option  class="field-cover" value="no">no</option>
-          <option  class="field-cover" value="yes">yes</option>
+          <option  class="field-cover" value="maybe">Covishield</option>
+          <option  class="field-cover" value="no">Covaxin</option>
+          <option  class="field-cover" value="yes">Moderna</option>
         </select>
       </div>
 
       <div class="field-cover">
        
        <label class="question">Select problems, if any</label> <br>
-          <input type="radio" value="hbp" id="hbp" name="problem"> <label for id="hbp">High blood pressure</label><br>
-          <input type="radio" value="lgd" id="lgd" name="problem"> <label for id="lgd">Any lungs discomfort</label><br>
-          <input type="radio" value="axd" id="axd" name="problem"> <label for id="axd">Any kind of
+          <input type="checkbox" value="hbp" id="hbp" name="problem"> <label for id="hbp">High blood pressure</label><br>
+          <input type="checkbox" value="lgd" id="lgd" name="problem"> <label for id="lgd">Any lungs discomfort</label><br>
+          <input type="checkbox" value="axd" id="axd" name="problem"> <label for id="axd">Any kind of
             anxiety/depression</label>
       </div>
       <div class="field-cover">
 
        
           <label class="questions">select pronoun to </label><br>
-          <input type="checkbox" value="the id=" they" name="problem"> <label for id="they">They</label><br>
-          <input type="checkbox" value="she id=" she" name="problem"> <label for id="she">She</label><br>
-          <input type="checkbox" value="he" id="he" name="problem"> <label for id="he">He</label>
+          <input type="radio" value="the id=" they" name="problem"> <label for id="they">They</label><br>
+          <input type="radio" value="she id=" she" name="problem"> <label for id="she">She</label><br>
+          <input type="radio" value="he" id="he" name="problem"> <label for id="he">He</label>
         
 
 
