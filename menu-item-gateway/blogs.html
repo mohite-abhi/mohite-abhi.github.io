@@ -1,0 +1,114 @@
+<html>
+
+<head>
+    <title>Web Apps</title>
+    <meta content="Web Apps">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: rgba(219, 231, 243, 0.623);
+            font-family: 'Nunito', sans-serif;
+        }
+
+        header {
+            background: repeating-linear-gradient(0deg, rgba(16, 164, 223, 0.623) 0px, rgb(255, 255, 255) 2px, rgba(82, 144, 168, 0.623) 3px);
+            width: fit-content;
+            max-width: 400px;
+            margin: auto;
+            border-radius: 5px;
+            margin-top: 40px;
+        }
+
+        h1 {
+            color: rgba(255, 255, 255, 0.623);
+            font-size: 7vh;
+        }
+
+        #list {
+            background-color: rgba(170, 210, 233, 0.377);
+            width: 80%;
+            margin: 10px auto;
+            padding: 10px 20px;
+            border-radius: 10px;
+            scrollbar-width: none;
+        }
+
+        section {
+            display: grid;
+            grid-template-columns: 80% 20%;
+            grid-gap: 4px;
+            margin-bottom: 20px;
+        }
+
+        .apps {
+            text-decoration: none;
+            color: rgba(43, 41, 41, 0.863);
+            font-size: 4vh;
+            background-color: rgba(121, 219, 226, 0);
+            border-radius: 20px 0 0 0;
+            padding-left: 20px;
+            padding-top: 10px;
+        }
+
+        .visit {
+            background-color: rgba(57, 169, 214, 0.267);
+            text-align: center;
+            border-radius: 5px 20px 5px 5px;
+            vertical-align: middle;
+            padding-top: 10px;
+        }
+
+        a {
+            font-size: 4vh;
+            text-decoration: none;
+            color: rgb(23, 138, 167);
+        }
+
+        .visit:hover {
+            width: 105%;
+            box-shadow: 0 0 10px rgba(49, 224, 255, 0.836);
+        }
+
+        .description {
+            grid-column: 1/3;
+            background: linear-gradient(to bottom, rgba(83, 193, 226, 0.404), rgba(93, 193, 233, 0.24), rgba(98, 121, 224, 0));
+            padding-left: 10px;
+            font-size: 3vh;
+            color: rgba(39, 38, 38, 0.829);
+            border-radius: 8px;
+        }
+
+        @media(max-width: 712px) {
+            #list {
+                width: 90%;
+            }
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <header>
+        <h1> Web Apps </h1>
+    </header>
+    <div id="list" class="ls" style="overflow-y:scroll;">
+        <section>
+            <div class="apps">ML mini project on Linear Regression </div>
+            <div class="visit">
+                <a target="_top" href="../blogs/week-2-ml-mini-project.html">
+                    <div>Visit</div>
+                </a><br>
+            </div>
+            <div class="description">
+                <p> Analyzing govt. cost vs revenue (2015-16) using ml in octave</p>
+            </div>
+        </section>
+    </div>
+
+
+
+</body>
+
+</html>
