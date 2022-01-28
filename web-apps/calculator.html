@@ -1,22 +1,21 @@
-
 <html>
+
 <head>
 	<title>amCal</title>
-	
-    <meta meta name="viewport" content=  
-            "width=device-width, user-scalable=no" /> 
+
+	<meta meta name="viewport" content="width=device-width, user-scalable=no" />
 	<link rel="stylesheet" href="../style/calculator.css">
 </head>
 
 <body>
 	<h1>Calculator </h1>
-	<div >
+	<div>
 		<table>
 			<tr>
-				<td colspan="4"style="text-align:right;">
-						<p style="height: 22px;">
-							<label type="input" name="inputHistory" id="inputHistory" >Ans=</label>
-						</p>
+				<td colspan="4" style="text-align:right;">
+					<p style="height: 22px;">
+						<label type="input" name="inputHistory" id="inputHistory">Ans=</label>
+					</p>
 				</td>
 			</tr>
 			<tr>
@@ -24,7 +23,7 @@
 					<input type="input" name="input" id="input">
 				</td>
 			</tr>
-			<tr>	
+			<tr>
 				<td>
 					<button onclick="increase('+')">+</button>
 				</td>
@@ -41,7 +40,7 @@
 			<tr>
 				<td>
 					<button onclick="increase('(')">(</button>
-					
+
 				</td>
 				<td>
 					<button onclick="increase('.')">.</button>
@@ -49,39 +48,42 @@
 				<td>
 					<button onclick="increase(')')">)</button>
 				</td>
-				
-					<td><button onclick="checkAndProcess()" id="equalButton">=</button></td>
-				</tr>
-				<tr>
-					<td><button onclick="clearThis()" style="font-size: 25px;">AC</button></td>
-					<td><button onclick="backspaceThis()" style="font-size: 20px;font-weight: 500;">DEL</button></td>
-				
-					<td><button onclick="increase(0  )" >0</button>	</td>
-					<td><button onclick="increase(1  )" >1</button>	</td><tr/><tr>
-					<td><button onclick="increase(2  )" >2</button>	</td>
-					<td><button onclick="increase(3  )" >3</button>	</td>
-					<td><button onclick="increase(4  )" >4</button>	</td>
-					<td><button onclick="increase(5  )" >5</button>	</td><tr/><tr>
-					<td><button onclick="increase(6  )" >6</button>	</td>
-					<td><button onclick="increase(7  )" >7</button>	</td>
-					<td><button onclick="increase(8  )" >8</button>	</td>
-					<td><button onclick="increase(9  )" >9</button>	</td>
-				
-					
-				</tr>
-				<tr>
-					<td><button onclick="showSymb('sin')">sin</button></td>
-					<td><button onclick="showSymb('cos')">cos</button></td>
-					<td><button onclick="showSymb('tan')">tan</button></td>
-					<td><button onclick="showSymb('sqrt')">&nbsp;&#8730&nbsp;&nbsp;</button></td>
-				</tr>
+
+				<td><button onclick="checkAndProcess()" id="equalButton">=</button></td>
+			</tr>
+			<tr>
+				<td><button onclick="clearThis()" style="font-size: 25px;">AC</button></td>
+				<td><button onclick="backspaceThis()" style="font-size: 20px;font-weight: 500;">DEL</button></td>
+
+				<td><button onclick="increase(0  )">0</button> </td>
+				<td><button onclick="increase(1  )">1</button> </td>
+				<tr />
+			<tr>
+				<td><button onclick="increase(2  )">2</button> </td>
+				<td><button onclick="increase(3  )">3</button> </td>
+				<td><button onclick="increase(4  )">4</button> </td>
+				<td><button onclick="increase(5  )">5</button> </td>
+				<tr />
+			<tr>
+				<td><button onclick="increase(6  )">6</button> </td>
+				<td><button onclick="increase(7  )">7</button> </td>
+				<td><button onclick="increase(8  )">8</button> </td>
+				<td><button onclick="increase(9  )">9</button> </td>
+
+
+			</tr>
+			<tr>
+				<td><button onclick="showSymb('sin')">sin</button></td>
+				<td><button onclick="showSymb('cos')">cos</button></td>
+				<td><button onclick="showSymb('tan')">tan</button></td>
+				<td><button onclick="showSymb('sqrt')">&nbsp;&#8730&nbsp;&nbsp;</button></td>
+			</tr>
 		</table>
 	</div>
 
 
 
-			</body>
-			<script src="../script/calculator.js"></script>
+</body>
+<script src="../script/calculator.js"></script>
 
-			</html>
-
+</html>

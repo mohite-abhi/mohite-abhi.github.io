@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="icon" href="../pics/icon.svg">
+    <link rel="stylesheet" href="../style/validation-form.css">
+    <link rel="stylesheet" href="../style/bootstrap.css">
+
+</head>
+
+<body class="bg-light">
+    <div id="main-form">
+        <h1 class="display-3">Welcome</h1>
+        <form action="#">
+            <div>
+                <img class="mb-4 icon" src="../pics/icon.svg" alt="" width="72" height="72">
+            </div>
+            <h1 class="h3 mb-3 font-weight-normal text-center">Please sign in</h1>
+            <div class="field-cover">
+                <label for="email" class="sr-only">Email</label>
+
+
+                <input type="email" name="email" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required
+                    class="form-control" placeholder="Email address" minlength="8">
+                <span class="error noselect" aria-live="polite">helo</span>
+            </div>
+            <div class="field-cover">
+                <label for="country" class="sr-only">Country</label>
+
+                <input type="text" name="country" id="country" pattern="[a-zA-Z]{2,}" required class="form-control"
+                    placeholder="Country">
+                <span class="error noselect" aria-live="polite">helo</span>
+
+            </div>
+            <div class="field-cover">
+
+                <label for="zip" class="sr-only">Zip</label>
+
+                <input type="text" pattern="^[1-9][0-9]{5}$" name="zip" id="zip" minlength="6" required
+                    class="form-control" placeholder="Zip">
+                <span class="error noselect" aria-live="polite">helo</span>
+
+            </div>
+            <div class="field-cover">
+
+                <label for="password" class="sr-only">Password</label>
+
+                <input type="password" name="password" id="password"
+                    pattern="(?=.*\d)(?=.*[!@#$&*])(?=.*[a-z])(?=.*[A-Z]).{1,}" minlength="8" required
+                    class="form-control" placeholder="Password">
+                <span class="error noselect" aria-live="polite">helo</span>
+            </div>
+
+            <div class="field-cover">
+                <label for="password2" class="sr-only">Confirm Password
+                </label>
+
+                <input type="password" name="password2" id="password2" id="password2" required class="form-control"
+                    placeholder="Confirm Password" data-pwdmatch="false">
+                <span class="error noselect" aria-live="polite">helo</span>
+            </div>
+            <input class="btn btn-lg btn-dark btn-block" type="submit" value="Submit">
+        </form>
+        <div>
+            <p class="mt-5 mb-3 text-muted text-center">&copy; mohite-abhi.githut.io</p>
+        </div>
+        
+
+
+    </div>
+    <script src="../script/validation-form.js"></script>
+</body>
+
+</html>
