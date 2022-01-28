@@ -1,15 +1,15 @@
 # mohite-abhi.github.io
 
 <h1>Introduction</h1>
-a simple hobby website to showcase my photographs/webpages design/art
+a website to showcase my photographs/webpages/art/blogs.
 
-visit the static website at <a href="https://mohite-abhi.github.io/">https://mohite-abhi.github.io</a>
+visit the website at <a href="https://mohite-abhi.github.io/">https://mohite-abhi.github.io</a>
 
 
 <ul>
-  <li>the photographs are all available in my instagram page <a href="https://www.instagram.com/abhishekmohite421/?hl=en">here</a>.</li>
-  <li>i created the web apps out of interest or got them as course assignment.</li>
-  <li>most of the sketches are from my high school time when i drew, then i stopped. Some of them are bad, i know and they are there so that 
-    i remember to draw better once to replace them. 
+  <li>the photographs were shot on an andriod phone</li>
+  <li>some of the web apps were built as a course assignment, rest to practice web development.</li>
+  <li>some of them are 3d rendered images, some vector graphics, and some hand drawn.</li>
+  <li>blogs are there to showcase some of my learning</li>
   </li>
  </ul>
