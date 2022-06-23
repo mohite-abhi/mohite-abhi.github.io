@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Movie Guesser</title>
+
+    <style>
+        .board {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: max-content;
+            margin: auto;
+            /* padding: 100px; */
+        }
+
+        button {
+            border-radius: 5px;
+            background-color: aliceblue;
+            border: 1px solid gray;
+            font-size: medium;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="board">
+        <h1>Dum Sharaz</h1>
+        <p style="font-size:large ;">Generate Random Indian Movies(1980-2021)</p>
+        <p style="border: 1px black solid; border-radius: 10px;padding:20px;" id="movie">⌛</p>
+        <button onclick="generate()">Generate</button>
+    </div>
+    <hr>
+    <b>Options</b>
+    <ul>
+
+        <li>
+            <div>
+                <p>Year:</p>
+                <input type="checkbox" id="before" name="year" value="1">
+                <label for="html">Before 2000</label><br>
+                <input type="checkbox" id="after" name="year" checked value="2">
+                <label for="css">After 2000</label><br>
+            </div>
+
+        </li>
+        <li>
+            <div class="slidecontainer">
+                <label for="rate">
+                    Min. Rating:
+                </label>
+                <input name="rate" type="range" min="1" max="10" value="5" class="ratingslider" id="myRange1">
+                <span id="rating">5</span>
+            </div>
+        </li>
+        <li>
+            <div class="slidecontainer">
+                <label for="hardness">
+                    Max. no. of words:
+                </label>
+                <input name="hardness" type="range" min="1" max="10" value="3" class="hardnessslider" id="myRange2">
+                <span id="hard">3</span>
+            </div>
+        </li>
+
+        <li>
+            <div>
+
+                <label for="Language">Language:</label>
+                <select name="Language" class="Language" id="Language">
+                    <option value="bhojpuri">bhojpuri</option>
+                    <option value='konkani'>konkani</option>
+                    <option value='marathi'>marathi</option>
+                    <option value='malayalam'>malayalam</option>
+                    <option value='tamil'>tamil</option>
+                    <option value='assamese'>assamese</option>
+                    <option value='gujarati'>gujarati</option>
+                    <option value='telugu'>telugu</option>
+                    <option value='bengali'>bengali</option>
+                    <option value='punjabi'>punjabi</option>
+                    <option value='nepali'>nepali</option>
+                    <option value='tulu'>tulu</option>
+                    <option value='hindi' selected>hindi</option>
+                    <option value='kannada'>kannada</option>
+                    <option value='oriya'>oriya</option>
+                    <option value='sanskrit'>sanskrit</option>
+                    <option value='urdu'>urdu</option>
+                    <option value='rajastani'>rajastani</option>
+                    <option value='kashmiri'>kashmiri</option>
+                </select>
+            </div>
+        </li>
+    </ul>
+
+    <script src="../script/random-movie-guesser.js"></script>
+</body>
+
+</html>
