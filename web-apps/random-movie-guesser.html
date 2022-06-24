@@ -33,6 +33,10 @@
         <p style="border: 1px black solid; border-radius: 10px;padding:20px;" id="movie">⌛</p>
         <button onclick="generate()">Generate</button>
     </div>
+    <div >
+        <label for="visits">visits: </label>
+        <span name="visits" id="visits"></span>
+    </div>
     <hr>
     <b>Options</b>
     <ul>
@@ -96,6 +100,8 @@
     </ul>
 
     <script src="../script/random-movie-guesser.js"></script>
+    <script async src="https://api.countapi.xyz/hit/mohite-abhi.github.io.web-apps.random-movie-guesser.html/visits?callback=cb"></script>
+
 </body>
 
 </html>

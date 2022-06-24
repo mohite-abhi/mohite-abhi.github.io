@@ -1,5 +1,8 @@
 
-// const fs = require('fs');
+function cb(response) {
+  document.getElementById('visits').innerText = response.value;
+}
+
 function readTextFile(file, callback) {
   var rawFile = new XMLHttpRequest();
   rawFile.overrideMimeType("application/json");
